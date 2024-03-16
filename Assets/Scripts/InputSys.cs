@@ -64,7 +64,7 @@ public class InputSys : MonoBehaviour
         _input.SwitchCurrentActionMap(actionMap.ToString());
         _actionMap = actionMap;
     }
-//
+
     //public void Bind()
     //{
         // var rebind = new RebindingOperation()

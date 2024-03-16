@@ -26,6 +26,11 @@ public class Enemy : Entity
         nameLabel.text = $"{E_name}: {Health}/{MaxHealth}";
     }
 
+    public void Move(Vector3 dest)
+    {
+        
+    }
+
     private void DropItems()
     {
         
