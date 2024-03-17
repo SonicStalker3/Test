@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3264a471e89224da8a65e8683b0c4b, type: 3}
+  m_Name: Enemies1
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 25.79624, y: 1.92, z: -13.504971}
+  - {x: 28.985117, y: 1.92, z: -9.45}
+  - {x: 35.145123, y: 1.92, z: -13.8293915}
+  - {x: 30.186426, y: 1.92, z: -17.974432}
+  indexPointsTo: 01000000020000000300000000000000
