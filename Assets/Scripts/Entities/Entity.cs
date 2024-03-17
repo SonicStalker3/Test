@@ -15,8 +15,9 @@ public class Entity : MonoBehaviour,IDamageble
 
     public int Stamina => _stamina;
 
-    public delegate void IsDiedEvent();
-    public IsDiedEvent IsDied;
+    protected delegate void IsDiedEvent();
+
+    protected IsDiedEvent IsDied;
 
     public void Damage(int damage)
     {
@@ -29,6 +30,11 @@ public class Entity : MonoBehaviour,IDamageble
         {
             IsDied?.Invoke();
         }
+    }
+
+    public void Move(Vector3 dest)
+    {
+        
     }
 
     public void OnDied()
