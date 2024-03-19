@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\UI\SceneChanger.cs" />
      <Compile Include="Assets\Scripts\UI\FirstOptionSelected.cs" />
      <Compile Include="Assets\Scripts\IDamageble.cs" />
+     <Compile Include="Assets\Scripts\Scriptable\AI\NavigationSystemSettings.cs" />
      <Compile Include="Assets\Scripts\3.5\GenerateClins.cs" />
      <Compile Include="Assets\Scripts\AI\EntityAI.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
@@ -58,8 +59,6 @@
      <Compile Include="Assets\Scripts\Entities\Enemy.cs" />
      <Compile Include="Assets\Scripts\AI\AttackManager.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
-     <Compile Include="Assets\Scripts\Scriptable\AI\NavigationSystemSettings.cs" />
-     <Compile Include="Assets\Scripts\INavigatable.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
