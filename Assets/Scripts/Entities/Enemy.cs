@@ -11,12 +11,11 @@ public class Enemy : Entity
     private float _lastY;
 
     private int _currentPoint;
-    // Start is called before the first frame update
     
     public void OnEnable()
     {
         IsDied += OnDied;
-        //IsDied += DropItems;
+        IsDied += DropItems;
     }
     
     void Start()
@@ -25,8 +24,6 @@ public class Enemy : Entity
         _lastY = transform.position.y;
         nameLabel = GetComponentInChildren<TextMesh>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         nameLabel.text = $"{E_name}: {Health}/{MaxHealth}";

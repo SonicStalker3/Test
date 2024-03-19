@@ -4,13 +4,13 @@ using UnityEngine.AI;
 public class EntityAI : MonoBehaviour
 {
     [SerializeField]
-    private Transform player; // Ссылка на объект игрока
+    private Transform player;
     [SerializeField]
     private NavigationSystemSettings NavMesh;
     [SerializeField]
-    private float visionRange = 10f; // Дальность видимости
+    private float visionRange = 10f;
     [SerializeField]
-    private float enemyDetectionRange = 5f; // Дальность обнаружения врага
+    private float enemyDetectionRange = 5f;
 
     private int current_point = 0;
     private NavMeshAgent agent;
@@ -54,7 +54,6 @@ public class EntityAI : MonoBehaviour
 
     private bool IsEnemyInRange(Vector3 point)
     {
-        // Проверяем, есть ли враги в заданном радиусе от точки
         Collider[] enemies = Physics.OverlapSphere(point, enemyDetectionRange);
         foreach (var enemy in enemies)
         {
