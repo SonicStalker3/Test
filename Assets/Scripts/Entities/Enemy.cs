@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Enemy : Entity, INavigatable
+public class Enemy : Entity
 {
     private TextMesh nameLabel;
 
@@ -32,7 +32,7 @@ public class Enemy : Entity, INavigatable
         nameLabel.text = $"{E_name}: {Health}/{MaxHealth}";
     }
     
-    public void NavMove(Vector3 dest)
+    /*public void NavMove(Vector3 dest)
     {
         var position = transform.position;
         dest.y = Mathf.Clamp(dest.y, position.y - 5, position.y + 5);
@@ -43,7 +43,7 @@ public class Enemy : Entity, INavigatable
             transform.position = Vector3.MoveTowards(transform.position, dest, 0.5f);
         }
         
-    }
+    }*/
 
     private void DropItems()
     {
