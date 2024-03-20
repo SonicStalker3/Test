@@ -7247,18 +7247,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 909068985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21f9c86b4aea9e46ad1fd20498b480a, type: 3}
+  m_Script: {fileID: 11500000, guid: d9e686107303ff94f9174931d79e774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   E_name: 
-  MaxHealth: 100
-  MaxStamina: 100
-  moveSpeed: 5
+  MaxHealth: 0
+  MaxStamina: 0
+  moveSpeed: 10
   baseDamage: 10
-  player: {fileID: 0}
-  stoppingDistance: 5
-  MaxAttackDistance: 15
-  rotationSpeed: 2
+  followDistance: 5
+  searchRadius: 10
   attackRate: 2
 --- !u!54 &909068987
 Rigidbody:
@@ -7630,7 +7628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 1006281689}
-  cursor_sensity: 2
+  cursor_sensitivity: 2
 --- !u!1 &1007058413
 GameObject:
   m_ObjectHideFlags: 0
