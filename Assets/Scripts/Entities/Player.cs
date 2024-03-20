@@ -38,7 +38,7 @@ public class Player : Entity
     private void Start()
     {
         _camera = Camera.main;
-        _health = MaxHealth;
+        health = MaxHealth;
         _input = GetComponent<PlayerInput>();
         controller = GetComponent<CharacterController>();
         playerCamera = GetComponentInChildren<Camera>().transform;
@@ -70,7 +70,7 @@ public class Player : Entity
                     if (hit.distance <= MaxAttackDistance)
                     {
                         hit.collider.TryGetComponent(out IDamageble entity);
-                        entity?.Damage(baseDamage);
+                        entity?.TakeDamage(baseDamage);
                     }
                     
                 }

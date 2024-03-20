@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public enum ActionMaps: byte
 {
@@ -30,6 +31,8 @@ public class InputSys : MonoBehaviour
     public bool historyBtn => _historyBtn;
     public bool attackBtn => _attackBtn;
 
+    public float cursor_sensitivity = 2;
+
     private void Start()
     {
         _input = GetComponent<PlayerInput>();
@@ -41,7 +44,7 @@ public class InputSys : MonoBehaviour
     private void Update()
     {
         _moveInput = _input.actions["Move"].ReadValue<Vector2>();
-        _lookInput = _input.actions["Rotate"].ReadValue<Vector2>();
+        _lookInput = _input.actions["Rotate"].ReadValue<Vector2>() * cursor_sensitivity;
         _nextBtn = _input.actions["NextMessage"].triggered;
         _historyBtn = _input.actions["History"].triggered;
         _attackBtn = _input.actions["Attack"].triggered;

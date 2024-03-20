@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    private TextMesh nameLabel;
+    private TextMeshProUGUI nameLabel;
 
     private float _lastY;
 
     private int _currentPoint;
-    
+    [SerializeField] private Camera mainCamera;
+
     public void OnEnable()
     {
         IsDied += OnDied;
@@ -20,15 +21,19 @@ public class Enemy : Entity
     
     void Start()
     {
-        _health = MaxHealth;
+         mainCamera = Camera.main;
+        health = MaxHealth;
         _lastY = transform.position.y;
-        nameLabel = GetComponentInChildren<TextMesh>();
+        nameLabel = GetComponentInChildren<TextMeshProUGUI>();
+        //nameLabel.transform.rotation = Quaternion.Euler(0,90,0);
     }
     void Update()
     {
+        var rotation = mainCamera.transform.rotation;
+        nameLabel.transform.LookAt(nameLabel.transform.position + rotation * Vector3.forward,
+            rotation * Vector3.up);
         nameLabel.text = $"{E_name}: {Health}/{MaxHealth}";
     }
-    
     /*public void NavMove(Vector3 dest)
     {
         var position = transform.position;

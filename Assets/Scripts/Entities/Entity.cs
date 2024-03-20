@@ -5,26 +5,31 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour,IDamageble
 {
+    [Header("Entity Properties")]
     public string E_name;
     public int MaxHealth;
     public int MaxStamina;
-    protected int _health = 100;
-    protected int _stamina;
-    protected int baseDamage = 10;
-    public int Health => _health;
+    
+    protected int health = 100;
+    protected int stamina;
+    //[Range(5f,35f)]
+    public int moveSpeed = 5;
+    public int baseDamage = 10;
+    
+    public int Health => health;
 
-    public int Stamina => _stamina;
+    public int Stamina => stamina;
 
     protected delegate void IsDiedEvent();
 
     protected IsDiedEvent IsDied;
 
-    public void Damage(int damage)
+    public void TakeDamage(int damage)
     {
         Debug.Log(Health);
         if (Health-damage > 0)
         {
-            _health -= damage;
+            health -= damage;
         }
         else
         {
@@ -32,12 +37,7 @@ public class Entity : MonoBehaviour,IDamageble
         }
     }
 
-    public void Move(Vector3 dest)
-    {
-        
-    }
-
-    public void OnDied()
+    protected void OnDied()
     {
         Destroy(gameObject);
         Debug.Log($"Существо {E_name} умерло");

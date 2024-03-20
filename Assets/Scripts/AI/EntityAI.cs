@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMesh))]
 public class EntityAI : MonoBehaviour
 {
     [SerializeField]
@@ -25,23 +26,23 @@ public class EntityAI : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (CanSeePlayer())
+     void Update()
         {
-            FollowPlayer();
-        }
-        else
-        {
-            if (IsEnemyInRange(NavMesh.points[current_point]))
+            if (CanSeePlayer())
             {
-                current_point = FindNextSafePoint();
+                agent.SetDestination(player.position);
             }
-            Patrol();
+            else
+            {
+                if (IsEnemyInRange(NavMesh.points[current_point]))
+                {
+                    current_point = FindNextSafePoint();
+                }
+                Patrol();
+            }
         }
-    }
-
-    private bool CanSeePlayer()
+    
+       private bool CanSeePlayer()
     {
         RaycastHit hit;
         Vector3 directionToPlayer = player.position - transform.position;
@@ -52,44 +53,44 @@ public class EntityAI : MonoBehaviour
         return false;
     }
 
-    private bool IsEnemyInRange(Vector3 point)
-    {
-        Collider[] enemies = Physics.OverlapSphere(point, enemyDetectionRange);
-        foreach (var enemy in enemies)
-        {
-            if (enemy.CompareTag("Enemy"))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+       private bool IsEnemyInRange(Vector3 point)
+       {
+           Collider[] enemies = Physics.OverlapSphere(point, enemyDetectionRange);
+           foreach (var enemy in enemies)
+           {
+               if (enemy.CompareTag("Enemy") && enemy.gameObject != this.gameObject)
+               {
+                   return true;
+               }
+           }
+           return false;
+       }
 
-    private int FindNextSafePoint()
-    {
-        int nextPointIndex = (current_point + 1) % NavMesh.points.Length;
-        while (IsEnemyInRange(NavMesh.points[nextPointIndex]))
-        {
-            nextPointIndex = (nextPointIndex + 1) % NavMesh.points.Length;
-        }
-        return nextPointIndex;
-    }
+       private int FindNextSafePoint()
+       {
+           int nextPointIndex = (current_point + 1) % NavMesh.points.Length;
+           if (IsEnemyInRange(NavMesh.points[nextPointIndex]))
+           {
+               nextPointIndex = (nextPointIndex + 1) % NavMesh.points.Length;
+           }
+           return nextPointIndex;
+       }
 
-    private void FollowPlayer()
-    {
-        agent.SetDestination(player.position);
-    }
+       private void Patrol()
+       {
+           Vector3 nextPoint = NavMesh.points[current_point];
+           //Debug.Log(Vector3.Distance(transform.position, nextPoint));
+           //Debug.Log(agent.stoppingDistance);
+           if (Vector3.Distance(transform.position, nextPoint) < 1) //agent.stoppingDistance
+           {
+               //current_point = FindNextSafePoint();
+               current_point = NavMesh.indexPointsTo[current_point];
+               //Debug.Log("patrool");
+           }
+           else
+           {
+               agent.SetDestination(nextPoint);
+           }
+       }
 
-    private void Patrol()
-    {
-        Vector3 nextPoint = NavMesh.points[NavMesh.indexPointsTo[current_point]];
-        if (Vector3.Distance(transform.position, nextPoint) < agent.stoppingDistance)
-        {
-            current_point = NavMesh.indexPointsTo[current_point];
-        }
-        else
-        {
-            agent.SetDestination(nextPoint);
-        }
-    }
 }
