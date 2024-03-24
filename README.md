@@ -12,10 +12,10 @@
 
 1. [Убедитесь, что у вас есть все требования](#requirements)
 2. [Загрузить исходный код](#download)
-3. [Установите Пакеты](#Packages)
+3. [Установите Пакеты](#packages)
 4. Откройте проект в Unity и наслаждайтесь!
 </p>
-<h2>Требования</h2>
+<h2 id=requirements>Требования</h2>
 <p>
 
 Перед началом убедитесь, что у вас соблюдены следующие требования:
@@ -49,6 +49,10 @@ git clone https://github.com/SonicStalker3/Test.git
 
 <p align="center">
   <img src="" />
+</p>
+<h2 id=packages></h2>
+<p>
+    Input System(new Input System) - Version 1.0.2 - January 21, 2021 [Documentation](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html)
 </p>
 
 ## Признательность
