@@ -52,7 +52,7 @@ git clone https://github.com/SonicStalker3/Test.git
 </p>
 <h2 id=packages></h2>
 <p>
-    Input System(new Input System) - Version 1.0.2 - January 21, 2021 [Documentation](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html)
+    Input System(new Input System) - Version 1.0.2 - January 21, 2021 <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html">Documentation</a>
 </p>
 
 ## Признательность
