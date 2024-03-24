@@ -1,12 +1,14 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody),typeof(CharacterController))]
 public class Player : StatsEntity
 {
     [Header("Base Values")]
     public float speed = 6.0f;
-    public float jumpSpeed = 8.0f;
+    public float jumpForce = 8.0f;
     public float rotateSpeed = 0.8f;
     [Range(5f,50f),SerializeField] 
     private float gravity = 20.0f;
@@ -34,6 +36,9 @@ public class Player : StatsEntity
     private Vector2 _lookInput;
     private bool jumpCond;
     private Camera _camera;
+    [SerializeField] private bool isAttacking;
+    [Range(1, 10)]
+    [SerializeField] private int maxAttackRate = 5;
 
     private void Start()
     {
@@ -102,6 +107,15 @@ public class Player : StatsEntity
 
     }
     
+    private IEnumerator AttackCorut()
+    {
+        /*isAttacking = true;
+        yield return new WaitForSeconds(1 / maxAttackRate);
+        AttackEnemy();
+        isAttacking = false;*/
+        return null;
+    }
+    
     private void Move()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -123,7 +137,7 @@ public class Player : StatsEntity
         {
             if (InputSys.JumpInput)
             {
-                moveDirection.y = jumpSpeed;
+                moveDirection.y = jumpForce;
             }
             else moveDirection.y = 0;
         }

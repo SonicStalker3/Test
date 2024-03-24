@@ -69,6 +69,19 @@ public class GameMenu : MonoBehaviour
         {
             OptionsList[i].SetActive(i == currentOption);
         }
+    }
 
+    public void OnSensitivityChanged(float x)
+    {
+        //InputSys.cursor_sensitivity = x;
+    }
+    
+    public void OnMusicChanged(float x)
+    {
+        //InputSys.cursor_sensitivity = x;
+    }
+    public void OnGraphicsChanged(float x)
+    {
+        InputSys.cursor_sensitivity = x;
     }
 }
