@@ -20,7 +20,7 @@ public class Player : StatsEntity
 
 
     //private IControllable _controllable;
-    private InputSys _inputSys;
+    //private InputSys _inputSys;
     //PlayerInput _input;
     
     private Vector3 moveDirection = Vector3.zero;
@@ -42,7 +42,7 @@ public class Player : StatsEntity
         _input = GetComponent<PlayerInput>();
         controller = GetComponent<CharacterController>();
         playerCamera = GetComponentInChildren<Camera>().transform;
-        _inputSys = GetComponent<InputSys>();
+        //_inputSys = GetComponent<InputSys>();
         _dustEffect = GetComponentInChildren<ParticleSystem>();
         //_input._input.actions["Jump"].pre+= Jump;
     }
@@ -56,13 +56,13 @@ public class Player : StatsEntity
             // {
             //     _input.SwitchCurrentActionMap(ActionMaps.GamePlay.ToString());
             // }
-            if (!_inputSys && _inputSys.CurrentActionMap != ActionMaps.GamePlay)
+            if (InputSys.CurrentActionMap != ActionMaps.GamePlay)
             {
-                _inputSys.SwitchActionMap(ActionMaps.GamePlay);
+                InputSys.SwitchActionMap(ActionMaps.GamePlay);
             }
             
             Move();
-            if(_inputSys.attackBtn)
+            if(InputSys.AttackBtn)
             {
                 Ray ray = _camera!.ViewportPointToRay(new Vector3(0.5f, 0.5f));
                 if (Physics.Raycast(ray, out RaycastHit hit))
@@ -82,9 +82,9 @@ public class Player : StatsEntity
         }
         else
         {
-            if (!_input && _inputSys.CurrentActionMap != ActionMaps.Dialog)
+            if (!_input && InputSys.CurrentActionMap != ActionMaps.Dialog)
             {
-                _inputSys.SwitchActionMap(ActionMaps.Dialog);
+                InputSys.SwitchActionMap(ActionMaps.Dialog);
             }
             Cursor.lockState = CursorLockMode.Confined;
             moveDirection = Vector3.zero;
@@ -110,18 +110,18 @@ public class Player : StatsEntity
             playerModel.Rotate(0, _inputSys.lookInput.x * rotateSpeed, 0);
             playerCamera.Rotate(-_inputSys.lookInput.y * rotateSpeed, _inputSys.lookInput.x * rotateSpeed , 0);
         }*/
-        transform.Rotate(0, _inputSys.lookInput.x * rotateSpeed, 0);
-        playerCamera.Rotate(-_inputSys.lookInput.y * rotateSpeed, 0, 0);
+        transform.Rotate(0, InputSys.LookInput.x * rotateSpeed, 0);
+        playerCamera.Rotate(-InputSys.LookInput.y * rotateSpeed, 0, 0);
         
         if (playerCamera.localRotation.eulerAngles.y != 0)
         {
-            playerCamera.Rotate(_inputSys.lookInput.y * rotateSpeed, 0, 0);
+            playerCamera.Rotate(InputSys.LookInput.y * rotateSpeed, 0, 0);
         }
         
-        moveDirection = new Vector3(_inputSys.moveInput.x * speed, moveDirection.y, _inputSys.moveInput.y * speed);
+        moveDirection = new Vector3(InputSys.MoveInput.x * speed, moveDirection.y, InputSys.MoveInput.y * speed);
         if (controller.isGrounded)
         {
-            if (_inputSys.jumpInput)
+            if (InputSys.JumpInput)
             {
                 moveDirection.y = jumpSpeed;
             }

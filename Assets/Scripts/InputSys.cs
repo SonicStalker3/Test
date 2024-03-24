@@ -8,8 +8,7 @@ public enum ActionMaps: byte
 }
 
 
-/*
-public static class InputManager
+public static class InputSys
 {
     private static Vector2 _moveInput;
     private static Vector2 _lookInput;
@@ -17,36 +16,49 @@ public static class InputManager
     private static bool _nextBtn;
     private static bool _historyBtn;
     private static bool _attackBtn;
-
+    
+    private static InputAction _navigateUI;
+    
+    private static ActionMaps _actionMapEnum;
     private static InputActionMap _currentActionMap;
 
     private static InputActionMap _gameplayActionMap;
     private static InputActionMap _dialogActionMap;
-    /*public enum ActionMaps: byte
-    {
-        GamePlay=0,
-        Dialog
-    }#1#
+    
+    public static float cursor_sensitivity = 2;
 
-    static InputManager()
+    static InputSys()
     {
-        // Загрузите InputActionAsset из ресурсов
         var gameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
-
-        // Создайте экземпляры InputActionMap для каждого ActionMap
+        
         _gameplayActionMap = gameplayControls.FindActionMap("GamePlay");
         _dialogActionMap = gameplayControls.FindActionMap("Dialog");
+        _navigateUI = gameplayControls.FindActionMap("UI").FindAction("Navigate");
 
-        // Установите обработчики для действий в Gameplay ActionMap
-        _gameplayActionMap.FindAction("Move").performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
-        _gameplayActionMap.FindAction("Look").performed += ctx => _lookInput = ctx.ReadValue<Vector2>();
-        _gameplayActionMap.FindAction("Jump").performed += ctx => _jumpInput = ctx.ReadValue<bool>();
-        _gameplayActionMap.FindAction("Next").performed += ctx => _nextBtn = ctx.ReadValue<bool>();
-        _gameplayActionMap.FindAction("History").performed += ctx => _historyBtn = ctx.ReadValue<bool>();
-        _gameplayActionMap.FindAction("Attack").performed += ctx => _attackBtn = ctx.ReadValue<bool>();
-
-        // Установите Gameplay как текущий ActionMap по умолчанию
+        _gameplayActionMap.FindAction("Jump").performed += OnJump;
+        
         SwitchActionMap(ActionMaps.GamePlay);
+    }
+    public static void OnJump(InputAction.CallbackContext context)
+    {
+        _jumpInput = context.ReadValueAsButton();
+    }
+
+    public static void Update()
+    {
+        _moveInput = _gameplayActionMap.FindAction("Move").ReadValue<Vector2>();
+        _lookInput = _gameplayActionMap.FindAction("Rotate").ReadValue<Vector2>()*2;
+        //_jumpInput = _gameplayActionMap.FindAction("Jump").triggered;
+        _attackBtn = _gameplayActionMap.FindAction("Attack").triggered;
+        
+        _nextBtn = _dialogActionMap.FindAction("NextMessage").triggered;
+        _historyBtn = _dialogActionMap.FindAction("History").triggered;
+        
+        /*_moveInput = _input.actions["Move"].ReadValue<Vector2>();
+        _lookInput = _input.actions["Rotate"].ReadValue<Vector2>() * cursor_sensitivity;
+        _nextBtn = _input.actions["NextMessage"].triggered;
+        _historyBtn = _input.actions["History"].triggered;
+        _attackBtn = _input.actions["Attack"].triggered;*/
     }
 
     public static void SwitchActionMap(ActionMaps actionMap)
@@ -55,6 +67,7 @@ public static class InputManager
         {
             _currentActionMap.Disable();
         }
+
         switch (actionMap)
         {
             case ActionMaps.GamePlay:
@@ -67,7 +80,9 @@ public static class InputManager
                 _currentActionMap = _gameplayActionMap;
                 break;
         }
+
         _currentActionMap.Enable();
+        _actionMapEnum = actionMap;
     }
 
     public static Vector2 MoveInput => _moveInput;
@@ -76,15 +91,17 @@ public static class InputManager
     public static bool NextBtn => _nextBtn;
     public static bool HistoryBtn => _historyBtn;
     public static bool AttackBtn => _attackBtn;
+    public static ActionMaps CurrentActionMap => _actionMapEnum;
+    public static InputAction NavigateUI => _navigateUI;
 }
-*/
 
 
+/*
 public class InputSys: MonoBehaviour
 {
     public PlayerInput _input;
     /*[SerializeField]
-    private InputActionAsset _altInput;*/
+    private InputActionAsset _altInput;#1#
     private ActionMaps _actionMap;
     
     private Vector2 _moveInput;
@@ -146,4 +163,4 @@ public class InputSys: MonoBehaviour
     //}
     
     public ActionMaps CurrentActionMap => _actionMap;
-}
+}*/
