@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
@@ -11,25 +13,32 @@ public class MainMenu : MonoBehaviour
     public GameObject MenuObj;
     public GameObject Cube_Rotate;
     private EventSystem _eventSystem;
+    public GameObject[] OptionsList;
 
+    [SerializeField]
     private GameObject MainMenuSelected;
+    [SerializeField]
     private GameObject OptionsSelected;
     public GameObject CloseOptionBtn;
-
-    private void FixedUpdate()
-    {
-        // if (true)
-        // {
-        // }
-    }
-
-    // Start is called before the first frame update
     private void Awake()
     {
-        _eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>(); 
+        _eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        
     }
 
-    public void LevelLoad()
+    private void Start()
+    {
+        var panel = OptionsObj.transform.GetChild(1);//GameObject.Find("OptionPanels");
+        Debug.Log(panel.name);
+        int children = panel.transform.childCount;
+        OptionsList = new GameObject[children];
+        for (int i = 0; i < children; ++i)
+        {
+            OptionsList[i] = panel.transform.GetChild(i).gameObject;
+        }
+    }
+
+    public void StartBtn()
     {
         SceneManager.LoadScene(1);
     }
@@ -43,16 +52,25 @@ public class MainMenu : MonoBehaviour
     {
         OptionsObj.SetActive(true);
         MainMenuSelected = _eventSystem.currentSelectedGameObject;
-        if (!OptionsSelected) OptionsSelected = _eventSystem.currentSelectedGameObject;
-        else OptionsSelected = CloseOptionBtn;
+        OptionsSelected = !OptionsSelected ? _eventSystem.currentSelectedGameObject : CloseOptionBtn;
         _eventSystem.SetSelectedGameObject(OptionsSelected);
         MenuObj.SetActive(false);
     }
+    
     public void CloseOptions() 
     {
         MenuObj.SetActive(true);
         _eventSystem.SetSelectedGameObject(MainMenuSelected);
         OptionsObj.SetActive(false);
+    }
+
+    public void OpenOption(int currentOption)
+    {
+        for (int i = 0; i < OptionsList.Length; ++i)
+        {
+            OptionsList[i].SetActive(i == currentOption);
+        }
+
     }
 
 

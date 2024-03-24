@@ -10,7 +10,7 @@ public class Assistent : NPC
     private bool isAttacking = false;
     void Start()
     {
-        Init();
+        base.Init();
     }
 
     private void Update()
@@ -23,6 +23,7 @@ public class Assistent : NPC
         {
             StartCoroutine(AttackWithDelay());
         }
+        UpdateGUI();
     }
     
     private IEnumerator AttackWithDelay()
@@ -62,7 +63,7 @@ public class Assistent : NPC
             }
         }
 
-        Debug.Log(closestEnemy);
+        //Debug.Log(closestEnemy);
         return closestEnemy;
     }
 }

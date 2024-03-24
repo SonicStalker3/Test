@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody),typeof(CharacterController))]
-public class Player : Entity
+public class Player : StatsEntity
 {
     [Header("Base Values")]
     public float speed = 6.0f;
@@ -69,7 +69,8 @@ public class Player : Entity
                 {
                     if (hit.distance <= MaxAttackDistance)
                     {
-                        hit.collider.TryGetComponent(out IDamageble entity);
+                        hit.collider.TryGetComponent(out Entity entity);
+                        Debug.Log($"{entity} {hit.collider.name}");
                         entity?.TakeDamage(baseDamage);
                     }
                     

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c75bc9b5fca9aa4ea7afa5d6bd720dd, type: 3}
+  m_Name: New Quest Object
+  m_EditorClassIdentifier: 
+  Header: 
+  Description: 
+  preQuestDialog: {fileID: 0}
+  postQuestDialog: {fileID: 0}
+  requirements:
+  - type: 0
+    description: 
+    itemReference: 
+    npcReference: {fileID: 0}
+    levelReference: 
+  - type: 1
+    description: 
+    itemReference: 
+    npcReference: {fileID: 0}
+    levelReference: 
+  questState: 0

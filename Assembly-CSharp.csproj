@@ -42,12 +42,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EntityOverlay.cs" />
+     <Compile Include="Assets\Scenes\OptionListManager.cs" />
      <Compile Include="Assets\Scripts\UI\SceneChanger.cs" />
      <Compile Include="Assets\Scripts\UI\FirstOptionSelected.cs" />
+     <Compile Include="Assets\Scripts\Quests\StoryLine.cs" />
      <Compile Include="Assets\Scripts\IDamageble.cs" />
+     <Compile Include="Assets\Scripts\Quests\QuestObject.cs" />
      <Compile Include="Assets\Scripts\Scriptable\AI\NavigationSystemSettings.cs" />
      <Compile Include="Assets\Scripts\3.5\GenerateClins.cs" />
+     <Compile Include="Assets\Scripts\Entities\StatsEntity.cs" />
      <Compile Include="Assets\Scripts\AI\EntityAI.cs" />
+     <Compile Include="Assets\Scripts\Entities\NPC\Assistent.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Entities\NPC\NPC.cs" />
      <Compile Include="Assets\Scripts\InputSys.cs" />
@@ -60,7 +65,7 @@
      <Compile Include="Assets\Scripts\Entities\Enemy.cs" />
      <Compile Include="Assets\Scripts\AI\AttackManager.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
-     <Compile Include="Assets\Scripts\Entities\NPC\Assistent.cs" />
+     <Compile Include="Assets\PropertyDrawers\RequirementDrawer.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -314,11 +319,17 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:/Program Files/Unity 2021.1.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Unsafe">
+     <HintPath>C:/Users/Arseniy/Test/Library/PackageCache/com.unity.burst@1.4.7/Unity.Burst.Unsafe.dll</HintPath>
+     </Reference>
      <Reference Include="MiscUtil">
      <HintPath>C:/Users/Arseniy/Test/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
      </Reference>
      <Reference Include="Antlr3.Runtime">
      <HintPath>C:/Users/Arseniy/Test/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="clipper_library">
+     <HintPath>C:/Users/Arseniy/Test/Library/PackageCache/com.unity.cinemachine@2.7.9/Runtime/ThirdParty/clipper_library.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:/Program Files/Unity 2021.1.6f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -668,8 +679,17 @@
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -692,6 +712,12 @@
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="VSSettingsProvider">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
      </Reference>
@@ -707,6 +733,9 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Animation.Rigging.Editor">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
@@ -715,6 +744,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Animation.Rigging">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>C:/Users/Arseniy/Test/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
