@@ -6,7 +6,7 @@
 
 | [:sparkles: С чего начать](#getting-started) | [:rocket: Установить](#download) | [:camera: Скриншоты](#screenshots) |
 | --------------- | -------- | ----------- |
-<h2>С чего начать</h2>
+<h2 id=getting-started>С чего начать</h2>
 <p>
 Следуйте инструкциям ниже, чтобы начать работу с исходным кодом Test Game:
 
@@ -23,7 +23,7 @@
 - [Игровой движок Unity](https://unity3d.com)
 - Базовые знания Unity и C#.
 </p>
-<h2>Скачать</h2>
+<h2 id=download>Скачать</h2>
 <p>
 
 Вы можете получить доступ к исходному коду Red Runner одним из следующих способов:
@@ -34,7 +34,7 @@
 git clone https://github.com/SonicStalker3/Test.git
 ```
 </p>
-<h2>Скриншоты</h2>
+<h2 id=screenshots>Скриншоты</h2>
 <p align="center">
   <img src="" />
 </p>
