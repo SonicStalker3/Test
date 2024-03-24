@@ -82,7 +82,7 @@ public class Player : StatsEntity
         }
         else
         {
-            if (!_input && InputSys.CurrentActionMap != ActionMaps.Dialog)
+            if (InputSys.CurrentActionMap != ActionMaps.Dialog)
             {
                 InputSys.SwitchActionMap(ActionMaps.Dialog);
             }
@@ -101,7 +101,7 @@ public class Player : StatsEntity
         
 
     }
-
+    
     private void Move()
     {
         Cursor.lockState = CursorLockMode.Locked;

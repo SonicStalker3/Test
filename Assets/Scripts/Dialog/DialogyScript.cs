@@ -30,7 +30,7 @@ public class DialogyScript : MonoBehaviour
 
     private void Awake()
     {
-        //HistoryChoice = Resources.Load<GameObject>("HistoryDialogText");
+        HistoryChoice = Resources.Load<GameObject>("HistoryDialogText");
     }
 
     // Start is called before the first frame update
