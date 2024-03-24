@@ -31,12 +31,22 @@ public class Requirement
 {
     public RequirementType type;
     public string description;
-    public object reference; 
-    //[RequirementType]
-    public string itemReference; 
-    //[RequirementType]
-    public NPC npcReference; 
-    //[RequirementType]
+
+    public string itemReference;
+    [Range(1, 50)]
+    public int itemValues;
+    
+    public NPC npcReference;
+    
     public string levelReference;
 }
-public enum RequirementType {Item, NPC=1, Level=2 }
+
+public enum RequirementType
+{
+    [InspectorName("Collect Item")]
+    Item = 0,
+    [InspectorName("Save NPC")]
+    Npc,
+    Level,
+    Master
+}
