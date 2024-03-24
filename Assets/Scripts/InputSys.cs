@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,14 +28,15 @@ public static class InputSys
     private static InputActionMap _dialogActionMap;
     
     public static float cursor_sensitivity = 2;
+    private static readonly InputActionAsset _gameplayControls;
 
     static InputSys()
     {
-        var gameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
+        _gameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
         
-        _gameplayActionMap = gameplayControls.FindActionMap("GamePlay");
-        _dialogActionMap = gameplayControls.FindActionMap("Dialog");
-        _navigateUI = gameplayControls.FindActionMap("UI").FindAction("Navigate");
+        _gameplayActionMap = _gameplayControls.FindActionMap("GamePlay");
+        _dialogActionMap = _gameplayControls.FindActionMap("Dialog");
+        _navigateUI = _gameplayControls.FindActionMap("UI").FindAction("Navigate");
 
         _gameplayActionMap.FindAction("Jump").performed += OnJump;
         
@@ -43,11 +46,11 @@ public static class InputSys
     {
         _jumpInput = context.ReadValueAsButton();
     }
-
+    
     public static void Update()
     {
         _moveInput = _gameplayActionMap.FindAction("Move").ReadValue<Vector2>();
-        _lookInput = _gameplayActionMap.FindAction("Rotate").ReadValue<Vector2>()*2;
+        _lookInput = _gameplayActionMap.FindAction("Rotate").ReadValue<Vector2>() * cursor_sensitivity;
         //_jumpInput = _gameplayActionMap.FindAction("Jump").triggered;
         _attackBtn = _gameplayActionMap.FindAction("Attack").triggered;
         
@@ -59,6 +62,21 @@ public static class InputSys
         _nextBtn = _input.actions["NextMessage"].triggered;
         _historyBtn = _input.actions["History"].triggered;
         _attackBtn = _input.actions["Attack"].triggered;*/
+    }
+
+    public static Dictionary<string, InputAction> ActionsList()
+    {
+        Dictionary<string, InputAction> actionDict = new Dictionary<string, InputAction>();
+
+        foreach (var actionMap in _gameplayControls.actionMaps)
+        {
+            foreach (var action in actionMap.actions)
+            {
+                string key = $"{actionMap.name}/{action.name}";
+                actionDict[key] = action;
+            }
+        }
+        return actionDict;
     }
 
     public static void SwitchActionMap(ActionMaps actionMap)
@@ -83,6 +101,41 @@ public static class InputSys
 
         _currentActionMap.Enable();
         _actionMapEnum = actionMap;
+    }
+
+    public static void SwitchActionMap(ActionMaps[] actionMaps)
+    {
+        if (_currentActionMap != null)
+        {
+            _currentActionMap.Disable();
+        }
+
+        foreach (ActionMaps map in (ActionMaps[])Enum.GetValues(typeof(ActionMaps)))
+        {
+            switch (map)
+            {
+                case ActionMaps.GamePlay:
+                    _currentActionMap = _gameplayActionMap;
+                    break;
+                case ActionMaps.Dialog:
+                    _currentActionMap = _dialogActionMap;
+                    break;
+                default:
+                    _currentActionMap = _gameplayActionMap;
+                    break;
+            }
+
+            if (_currentActionMap != null) _currentActionMap.Enable();
+            _actionMapEnum = map;
+        }
+    }
+    public static void Bind(InputAction Action, string Type = "Keyboard")
+    {
+     var rebind = new InputActionRebindingExtensions.RebindingOperation()
+         .WithAction(Action)
+         .WithBindingGroup("Gamepad")
+         .WithCancelingThrough("<Keyboard>/escape");
+     rebind.Start();
     }
 
     public static Vector2 MoveInput => _moveInput;
