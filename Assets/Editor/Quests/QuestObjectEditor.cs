@@ -104,17 +104,22 @@ namespace Editor.Quests
                     foreach (var type in Enum.GetValues(typeof(RequirementType))) //(RequirementType)
                     {
                         string referenceValuesName = $"{typeProperty.enumDisplayNames[typeProperty.intValue].ToLower()}Values";
+                        Debug.Log(referenceValuesName);
                         var referenceValues = element.FindPropertyRelative(referenceValuesName);
                         if (referenceValues != null)
                         {
-                            FieldInfo fieldInfo = serializedObject.targetObject.GetType().GetField(referenceValuesName);
-                            fieldInfo = referenceValues.GetType().GetField("referenceValuesName", BindingFlags.Public | BindingFlags.Instance);
-                            RangeAttribute rangeAttribute = (RangeAttribute)fieldInfo?.GetCustomAttribute(typeof(RangeAttribute));
-                            /*if (rangeAttribute != null)
+                            /*// Получаем FieldInfo от объекта, который содержит поле
+                            FieldInfo fieldInfo = _requirementsProperty.serializedObject.targetObject.GetType().GetField(referenceValuesName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+                            if (fieldInfo != null)
                             {
-                                Debug.Log($"{rangeAttribute.min}, {rangeAttribute.max}");
-                                referenceValues.intValue = (int)rangeAttribute.min;
-                            }*/
+                                RangeAttribute rangeAttribute = (RangeAttribute)fieldInfo.GetCustomAttribute(typeof(RangeAttribute));
+                                Debug.Log(rangeAttribute);
+                                if (rangeAttribute != null)
+                                {
+                                    referenceValues.intValue = (int)rangeAttribute.min;
+                                }
+                            }
+                            Debug.Log(referenceValues.intValue);*/
                         }
                     }
 

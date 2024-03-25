@@ -34,7 +34,7 @@ public class Requirement
 
     public string itemReference;
     [Range(1, 50)]
-    public int itemValues;
+    public int itemValues = 1;
     
     public NPC npcReference;
     

@@ -76,6 +76,13 @@ public static class InputSys
                 actionDict[key] = action;
             }
         }
+
+        /*
+        foreach (var VARIABLE in actionDict)
+        {
+            Debug.Log(VARIABLE.Key);
+        }*/
+        
         return actionDict;
     }
 

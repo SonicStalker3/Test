@@ -22,7 +22,6 @@ public class GameMenu : MonoBehaviour
     {
         _eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         var panel = OptionsObj.transform.GetChild(1);//GameObject.Find("OptionPanels");
-        Debug.Log(panel.name);
         int children = panel.transform.childCount;
         OptionsList = new GameObject[children];
         for (int i = 0; i < children; ++i)
