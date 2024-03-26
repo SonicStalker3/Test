@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c75bc9b5fca9aa4ea7afa5d6bd720dd, type: 3}
-  m_Name: New Quest Object
+  m_Name: 
   m_EditorClassIdentifier: 
   Header: 
   Description: 
@@ -18,9 +18,15 @@ MonoBehaviour:
   postQuestDialog: {fileID: 0}
   requirements:
   - type: 0
-    description: 
-    itemReference: 
-    itemValues: 0
+    itemReference: {fileID: 0}
+    itemValues: 1
     npcReference: {fileID: 0}
+    npcValues: {fileID: 0}
+    levelReference: 
+  - type: 0
+    itemReference: {fileID: 11400000, guid: 163fe08e92d72784f9ada8acfb1c0217, type: 2}
+    itemValues: 1
+    npcReference: {fileID: 0}
+    npcValues: {fileID: 0}
     levelReference: 
   questState: 0
