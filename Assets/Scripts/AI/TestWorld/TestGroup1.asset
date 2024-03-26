@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3264a471e89224da8a65e8683b0c4b, type: 3}
+  m_Name: TestGroup1
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 109.84874, y: 177.30394, z: 116.92157}
+  - {x: 121.93781, y: 185, z: 126.4412}
+  - {x: 130.0121, y: 185, z: 118.033806}
+  - {x: 120.72046, y: 179.18053, z: 105.12769}
+  indexPointsTo: 01000000020000000300000000000000

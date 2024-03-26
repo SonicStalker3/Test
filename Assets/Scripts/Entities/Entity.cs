@@ -17,6 +17,7 @@ public class Entity : MonoBehaviour, IDamageble
     public int moveSpeed = 5;
     protected bool isImmortal;
     public int Health => health;
+
     protected delegate void IsDiedEvent();
 
     protected IsDiedEvent IsDied;
@@ -52,7 +53,7 @@ public class Entity : MonoBehaviour, IDamageble
         health = MaxHealth;
     }
 
-    protected void OnDied()
+    protected virtual void OnDied()
     {
         Destroy(gameObject);
         Debug.Log($"Существо {E_name} умерло");

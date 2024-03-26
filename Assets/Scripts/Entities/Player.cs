@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -74,7 +75,7 @@ public class Player : StatsEntity
                 {
                     if (hit.distance <= MaxAttackDistance)
                     {
-                        hit.collider.TryGetComponent(out Entity entity);
+                        hit.collider.TryGetComponent(out Enemy entity);
                         /*Debug.Log($"{entity} {hit.collider.name}");*/
                         entity?.TakeDamage(baseDamage);
                     }
@@ -146,5 +147,10 @@ public class Player : StatsEntity
     public void OnEndDialog()
     {
         isControll = true;
+    }
+
+    protected override void OnDied()
+    {
+        throw new Exception("Вы умерли, поздравляю");
     }
 }

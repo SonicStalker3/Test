@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Enemy : StatsEntity
 {
+    [SerializeField]
+    private float DetectionRange = 5f;
     //private TextMeshProUGUI nameLabel;
     private int _currentPoint;
     //[SerializeField] private Camera mainCamera;
