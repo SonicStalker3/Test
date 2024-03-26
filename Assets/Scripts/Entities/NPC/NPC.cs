@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+/*NPC Behaviour */
 public class NPC : StatsEntity
 {
     [Header("NPC Properties")] 

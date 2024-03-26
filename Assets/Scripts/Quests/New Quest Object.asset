@@ -20,11 +20,7 @@ MonoBehaviour:
   - type: 0
     description: 
     itemReference: 
-    npcReference: {fileID: 0}
-    levelReference: 
-  - type: 1
-    description: 
-    itemReference: 
+    itemValues: 0
     npcReference: {fileID: 0}
     levelReference: 
   questState: 0

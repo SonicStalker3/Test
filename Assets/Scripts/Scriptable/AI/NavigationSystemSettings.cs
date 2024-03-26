@@ -1,30 +1,32 @@
 using System;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-[CreateAssetMenu(menuName = "Navigation/NavSysSettings", order=-1)]
-public class NavigationSystemSettings : ScriptableObject
+namespace Scriptable.AI
 {
-    public Vector3[] points;
-    public int[] indexPointsTo;
-    
-    public void OnValidate()
+    /// Patrol Move Trajections
+    [CreateAssetMenu(menuName = "Navigation/NavSysSettings", order=-1)]
+    public class NavigationSystemSettings : ScriptableObject
     {
-        for (int i = 0; i < indexPointsTo.Length; i++)
+        public Vector3[] points;
+        public int[] indexPointsTo;
+    
+        public void OnValidate()
         {
-            if (indexPointsTo[i] < 0 || indexPointsTo[i] > points.Length-1)
+            for (int i = 0; i < indexPointsTo.Length; i++)
             {
-                indexPointsTo[i] = 0;
+                if (indexPointsTo[i] < 0 || indexPointsTo[i] > points.Length-1)
+                {
+                    indexPointsTo[i] = 0;
+                }
             }
-        }
-        if (indexPointsTo != null && points.Length != indexPointsTo.Length)
-        {
-            Array.Resize(ref indexPointsTo,points.Length);
-        }
-        else if(points.Length == 1)
-        {
-            indexPointsTo = new int[points.Length];
+            if (indexPointsTo != null && points.Length != indexPointsTo.Length)
+            {
+                Array.Resize(ref indexPointsTo,points.Length);
+            }
+            else if(points.Length == 1)
+            {
+                indexPointsTo = new int[points.Length];
+            }
         }
     }
 }

@@ -75,7 +75,7 @@ public class Player : StatsEntity
                     if (hit.distance <= MaxAttackDistance)
                     {
                         hit.collider.TryGetComponent(out Entity entity);
-                        Debug.Log($"{entity} {hit.collider.name}");
+                        /*Debug.Log($"{entity} {hit.collider.name}");*/
                         entity?.TakeDamage(baseDamage);
                     }
                     
