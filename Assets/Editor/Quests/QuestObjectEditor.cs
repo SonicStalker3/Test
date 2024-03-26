@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Reflection;
+using Items;
+using Scriptable;
+using Scriptable.Dialog;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -11,9 +15,8 @@ namespace Editor.Quests
     {
         // This will be the serialized "copy" of YourOtherClass.requirementsProperty
         private SerializedProperty _requirementsProperty;
-
-
-        private ReorderableList ReferenceList;
+        
+        private ReorderableList _referenceList;
 
         private void OnEnable()
         {
@@ -21,7 +24,7 @@ namespace Editor.Quests
             _requirementsProperty = serializedObject.FindProperty("requirements");
 
             // Step 2 setup the ReorderableList
-            ReferenceList = new ReorderableList(serializedObject, _requirementsProperty)
+            _referenceList = new ReorderableList(serializedObject, _requirementsProperty)
             {
                 draggable = true,
                 displayAdd = true,
@@ -38,12 +41,12 @@ namespace Editor.Quests
 
 
                     var typeProperty = element.FindPropertyRelative("type");
-                    var descriptionProperty = element.FindPropertyRelative("description");
+                    //var descriptionProperty = element.FindPropertyRelative("description");
 
                     EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), typeProperty);
                     rect.y += EditorGUIUtility.singleLineHeight;
-                    EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), descriptionProperty);
-                    rect.y += EditorGUIUtility.singleLineHeight;
+                    //EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), descriptionProperty);
+                    //rect.y += EditorGUIUtility.singleLineHeight;
 
 
                     // В зависимости от типа требования, отображаем соответствующее поле
@@ -89,7 +92,7 @@ namespace Editor.Quests
                 },
 
 
-                elementHeight = EditorGUIUtility.singleLineHeight * 5,
+                elementHeight = EditorGUIUtility.singleLineHeight * 4,
             
                 onAddCallback = list =>
                 {
@@ -100,33 +103,86 @@ namespace Editor.Quests
                     var element = list.serializedProperty.GetArrayElementAtIndex(index);
                 
                     var typeProperty = element.FindPropertyRelative("type");
-                    var descriptionProperty = element.FindPropertyRelative("description");
+                    //var descriptionProperty = element.FindPropertyRelative("description");
                     foreach (var type in Enum.GetValues(typeof(RequirementType))) //(RequirementType)
                     {
                         string referenceValuesName = $"{typeProperty.enumDisplayNames[typeProperty.intValue].ToLower()}Values";
-                        Debug.Log(referenceValuesName);
+                        //string referenceName = $"{typeProperty.enumDisplayNames[typeProperty.intValue].ToLower()}Reference";
+                        //Debug.Log(referenceValuesName);
                         var referenceValues = element.FindPropertyRelative(referenceValuesName);
                         if (referenceValues != null)
                         {
-                            /*// Получаем FieldInfo от объекта, который содержит поле
-                            FieldInfo fieldInfo = _requirementsProperty.serializedObject.targetObject.GetType().GetField(referenceValuesName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                            if (fieldInfo != null)
+                            // Получаем FieldInfo от объекта, который содержит поле
+                            FieldInfo referenceValuesField = typeof(Requirement).GetField(referenceValues.name);//nameof(Requirement.itemValues)
+                            if (referenceValuesField != null)
                             {
-                                RangeAttribute rangeAttribute = (RangeAttribute)fieldInfo.GetCustomAttribute(typeof(RangeAttribute));
+                                RangeAttribute rangeAttribute = (RangeAttribute)referenceValuesField.GetCustomAttribute(typeof(RangeAttribute));
                                 Debug.Log(rangeAttribute);
                                 if (rangeAttribute != null)
                                 {
                                     referenceValues.intValue = (int)rangeAttribute.min;
                                 }
+                                
                             }
-                            Debug.Log(referenceValues.intValue);*/
+                            //Debug.Log(referenceValues.intValue);
                         }
                     }
 
                     typeProperty.intValue = (int) RequirementType.Item;
-                    descriptionProperty.stringValue = "";
                 }
             };
+        }
+
+        public void OnValidate()
+        {
+            /*var arr = _referenceList.serializedProperty;
+            for (int i = 0; i < _referenceList.serializedProperty.arraySize; i++)
+            {
+                SerializedProperty elementProperty = arr.GetArrayElementAtIndex(i);
+                if (elementProperty.objectReferenceValue != null && elementProperty.objectReferenceValue is ItemHandler item)
+                {
+                    // Get the Range attribute from the "max" property of the corresponding ItemReference's property with the suffix "Value"
+                    SerializedProperty itemReferenceProperty = serializedObject.FindProperty(elementProperty.propertyPath.Replace("Array", "ItemReference"));
+                    if (itemReferenceProperty.objectReferenceValue != null && itemReferenceProperty.objectReferenceValue is ItemHandler itemReference)
+                    {
+                        SerializedProperty maxValueProperty = itemReferenceProperty.FindPropertyRelative("Value");
+                        //typeof(Requirement).GetField(referenceValues.name);
+                        RangeAttribute rangeAttribute = (RangeAttribute)maxValueProperty.GetCustomAttribute(typeof(RangeAttribute));
+                        if (rangeAttribute != null)
+                        {
+                            // Set the "max" property of the Range attribute to the "maxStack" property of the ItemReference
+                            SerializedProperty maxStackProperty = itemReferenceProperty.FindPropertyRelative("maxStack");
+                            rangeAttribute.max = maxStackProperty.intValue;
+                        }
+                    }
+                }
+            }*/
+            
+            /*foreach (var type in Enum.GetValues(typeof(RequirementType))) //(RequirementType)
+            {
+                string referenceValuesName = $"{typeProperty.enumDisplayNames[typeProperty.intValue].ToLower()}Values";
+                string referenceName = $"{typeProperty.enumDisplayNames[typeProperty.intValue].ToLower()}Reference";
+                //Debug.Log(referenceValuesName);
+                var referenceValues = element.FindPropertyRelative(referenceValuesName);
+                if (referenceValues != null)
+                {
+                    // Получаем FieldInfo от объекта, который содержит поле
+                    FieldInfo referenceValuesField = typeof(Requirement).GetField(referenceValues.name);//nameof(Requirement.itemValues)
+                    if (referenceValuesField != null)
+                    {
+                        RangeAttribute rangeAttribute = (RangeAttribute)referenceValuesField.GetCustomAttribute(typeof(RangeAttribute));
+                        Debug.Log(rangeAttribute);
+                        if (rangeAttribute != null)
+                        {
+                            referenceValues.intValue = (int)rangeAttribute.min;
+                        }
+                                
+                    }
+                    //Debug.Log(referenceValues.intValue);
+                }
+            }*/
+
+            serializedObject.ApplyModifiedProperties();
         }
 
         public override void OnInspectorGUI()
@@ -139,7 +195,7 @@ namespace Editor.Quests
             questObject.Description = EditorGUILayout.TextField("Description", questObject.Description);
             questObject.preQuestDialog = (DialogObject)EditorGUILayout.ObjectField("Pre-Quest Dialog", questObject.preQuestDialog, typeof(DialogObject), true);
             questObject.postQuestDialog = (DialogObject)EditorGUILayout.ObjectField("Post-Quest Dialog", questObject.postQuestDialog, typeof(DialogObject), true);
-            ReferenceList.DoLayoutList();
+            _referenceList.DoLayoutList();
             questObject.questState = (QuestObject.QuestState)EditorGUILayout.EnumPopup("Quest State", questObject.questState);
             serializedObject.ApplyModifiedProperties();
         }

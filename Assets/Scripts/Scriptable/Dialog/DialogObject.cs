@@ -1,41 +1,42 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Dialog/Dialog", order=-1)]
-public class DialogObject : ScriptableObject
+namespace Scriptable.Dialog
 {
-    public DialogText[] dialog;
-    public int iteration;
-
-    public void Reset()
+    ///Data Dialog
+    [CreateAssetMenu(menuName = "Dialog/Dialog", order=-1)]
+    public class DialogObject : ScriptableObject
     {
-        iteration = 0;
-    }
+        public DialogText[] dialog;
+        public int iteration;
 
-    public DialogText Set(int x)
-    {
-        if (x<dialog.Length) 
+        public void Reset()
         {
-            iteration = x;
+            iteration = 0;
         }
-        return dialog[iteration];
-    }
 
-    public DialogText Next()
-    {
-        DialogText temp = null;
-        if (iteration < dialog.Length)
+        public DialogText Set(int x)
         {
-            temp = dialog[iteration];
-            iteration += 1;
-            if (temp is null)
+            if (x<dialog.Length) 
             {
-                return CreateInstance<DialogText>();
+                iteration = x;
             }
+            return dialog[iteration];
         }
 
-        return temp;
+        public DialogText Next()
+        {
+            DialogText temp = null;
+            if (iteration < dialog.Length)
+            {
+                temp = dialog[iteration];
+                iteration += 1;
+                if (temp is null)
+                {
+                    return CreateInstance<DialogText>();
+                }
+            }
+
+            return temp;
+        }
     }
 }

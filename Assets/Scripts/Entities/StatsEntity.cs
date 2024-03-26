@@ -4,6 +4,7 @@ using System.Xml;
 using TMPro;
 using UnityEngine;
 
+///Entity with Status Bar(With Stats Panel) Behaviour
 public abstract class StatsEntity : Entity
 {
     protected int stamina;

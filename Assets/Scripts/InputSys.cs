@@ -10,6 +10,7 @@ public enum ActionMaps: byte
 }
 
 
+///Wrapper for easy interaction with the new Input System
 public static class InputSys
 {
     private static Vector2 _moveInput;
@@ -24,8 +25,8 @@ public static class InputSys
     private static ActionMaps _actionMapEnum;
     private static InputActionMap _currentActionMap;
 
-    private static InputActionMap _gameplayActionMap;
-    private static InputActionMap _dialogActionMap;
+    private static readonly InputActionMap GameplayActionMap;
+    private static readonly InputActionMap DialogActionMap;
     
     public static float cursor_sensitivity = 2;
     private static readonly InputActionAsset _gameplayControls;
@@ -34,11 +35,11 @@ public static class InputSys
     {
         _gameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
         
-        _gameplayActionMap = _gameplayControls.FindActionMap("GamePlay");
-        _dialogActionMap = _gameplayControls.FindActionMap("Dialog");
+        GameplayActionMap = _gameplayControls.FindActionMap("GamePlay");
+        DialogActionMap = _gameplayControls.FindActionMap("Dialog");
         _navigateUI = _gameplayControls.FindActionMap("UI").FindAction("Navigate");
 
-        _gameplayActionMap.FindAction("Jump").performed += OnJump;
+        GameplayActionMap.FindAction("Jump").performed += OnJump;
         
         SwitchActionMap(ActionMaps.GamePlay);
     }
@@ -47,15 +48,18 @@ public static class InputSys
         _jumpInput = context.ReadValueAsButton();
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
     public static void Update()
     {
-        _moveInput = _gameplayActionMap.FindAction("Move").ReadValue<Vector2>();
-        _lookInput = _gameplayActionMap.FindAction("Rotate").ReadValue<Vector2>() * cursor_sensitivity;
+        _moveInput = GameplayActionMap.FindAction("Move").ReadValue<Vector2>();
+        _lookInput = GameplayActionMap.FindAction("Rotate").ReadValue<Vector2>() * cursor_sensitivity;
         //_jumpInput = _gameplayActionMap.FindAction("Jump").triggered;
-        _attackBtn = _gameplayActionMap.FindAction("Attack").triggered;
+        _attackBtn = GameplayActionMap.FindAction("Attack").triggered;
         
-        _nextBtn = _dialogActionMap.FindAction("NextMessage").triggered;
-        _historyBtn = _dialogActionMap.FindAction("History").triggered;
+        _nextBtn = DialogActionMap.FindAction("NextMessage").triggered;
+        _historyBtn = DialogActionMap.FindAction("History").triggered;
         
         /*_moveInput = _input.actions["Move"].ReadValue<Vector2>();
         _lookInput = _input.actions["Rotate"].ReadValue<Vector2>() * cursor_sensitivity;
@@ -63,7 +67,10 @@ public static class InputSys
         _historyBtn = _input.actions["History"].triggered;
         _attackBtn = _input.actions["Attack"].triggered;*/
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>Возвращает словарь с ключом в ввиде пути("Type/Action") а в качестве значения ссылку на действие(Action)</returns>
     public static Dictionary<string, InputAction> ActionsList()
     {
         Dictionary<string, InputAction> actionDict = new Dictionary<string, InputAction>();
@@ -86,6 +93,10 @@ public static class InputSys
         return actionDict;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="actionMap"></param>
     public static void SwitchActionMap(ActionMaps actionMap)
     {
         if (_currentActionMap != null)
@@ -96,13 +107,13 @@ public static class InputSys
         switch (actionMap)
         {
             case ActionMaps.GamePlay:
-                _currentActionMap = _gameplayActionMap;
+                _currentActionMap = GameplayActionMap;
                 break;
             case ActionMaps.Dialog:
-                _currentActionMap = _dialogActionMap;
+                _currentActionMap = DialogActionMap;
                 break;
             default:
-                _currentActionMap = _gameplayActionMap;
+                _currentActionMap = GameplayActionMap;
                 break;
         }
 
@@ -110,6 +121,10 @@ public static class InputSys
         _actionMapEnum = actionMap;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="actionMaps"></param>
     public static void SwitchActionMap(ActionMaps[] actionMaps)
     {
         if (_currentActionMap != null)
@@ -122,13 +137,13 @@ public static class InputSys
             switch (map)
             {
                 case ActionMaps.GamePlay:
-                    _currentActionMap = _gameplayActionMap;
+                    _currentActionMap = GameplayActionMap;
                     break;
                 case ActionMaps.Dialog:
-                    _currentActionMap = _dialogActionMap;
+                    _currentActionMap = DialogActionMap;
                     break;
                 default:
-                    _currentActionMap = _gameplayActionMap;
+                    _currentActionMap = GameplayActionMap;
                     break;
             }
 
@@ -136,13 +151,23 @@ public static class InputSys
             _actionMapEnum = map;
         }
     }
-    public static void Bind(InputAction Action, string Type = "Keyboard")
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="Action"></param>
+    /// <param name="Type"></param>
+    public static void Bind(InputAction Action, string Type = "Keyboard&Mouse")
     {
+        GameplayActionMap.Disable();
+        DialogActionMap.Disable();
      var rebind = new InputActionRebindingExtensions.RebindingOperation()
          .WithAction(Action)
          .WithBindingGroup("Gamepad")
+         //.WithBindingGroup("")
          .WithCancelingThrough("<Keyboard>/escape");
      rebind.Start();
+     GameplayActionMap.Enable();
+     DialogActionMap.Enable();
     }
 
     public static Vector2 MoveInput => _moveInput;

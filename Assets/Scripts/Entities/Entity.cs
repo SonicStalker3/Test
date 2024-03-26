@@ -32,10 +32,10 @@ public class Entity : MonoBehaviour, IDamageble
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("?D");
+        // Debug.Log("?D");
         if (!isImmortal) 
         {
-            Debug.Log(Health);
+//            Debug.Log(Health);
             if (Health - damage > 0)
             {
                 health -= damage;
