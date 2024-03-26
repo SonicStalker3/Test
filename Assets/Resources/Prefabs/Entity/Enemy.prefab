@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  NavMesh: {fileID: 11400000, guid: bb03539a6a022c943a871fd9f2b964c3, type: 2}
+  NavMesh: {fileID: 11400000, guid: a10a8ce47ac40a24ab808bc1024d8f80, type: 2}
   visionRange: 10
   DetectionRange: 5
   AttackRange: 1.5

@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.4
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.13333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -256,9 +256,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree13
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -278,11 +286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.682854
+      value: -22.72
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95210266
+      value: 5.86
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.z
@@ -401,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412126, guid: c75977e81bdb56446937daa818adc118, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -113.84
+      value: -113.03
       objectReference: {fileID: 0}
     - target: {fileID: 412126, guid: c75977e81bdb56446937daa818adc118, type: 3}
       propertyPath: m_LocalPosition.y
@@ -409,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 412126, guid: c75977e81bdb56446937daa818adc118, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.39
+      value: 35.89
       objectReference: {fileID: 0}
     - target: {fileID: 412126, guid: c75977e81bdb56446937daa818adc118, type: 3}
       propertyPath: m_LocalRotation.w
@@ -436,6 +444,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 17
@@ -853,6 +869,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree04_b 1
       objectReference: {fileID: 0}
+    - target: {fileID: 169198, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197984, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 453626, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_RootOrder
       value: 113
@@ -914,6 +938,14 @@ PrefabInstance:
     - target: {fileID: 116594, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_Name
       value: pinetree03_b 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
@@ -1624,6 +1656,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 3
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 114
@@ -1677,9 +1717,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree19
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -1791,6 +1839,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 10
@@ -2817,6 +2873,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -3362,6 +3426,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree10
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -3567,7 +3639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.64
+      value: 12.260001
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3575,7 +3647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.56
+      value: -2.1500068
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3679,6 +3751,14 @@ PrefabInstance:
     - target: {fileID: 120910, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_Name
       value: pinetree04_b 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 169198, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197984, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453626, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_RootOrder
@@ -4184,6 +4264,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 8
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 133
@@ -4585,6 +4673,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree18
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -4653,6 +4749,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 2
@@ -4764,9 +4868,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -5161,9 +5273,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree07
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -5326,6 +5446,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 7
@@ -5387,21 +5515,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 2
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.0971375
+      value: 6.34
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44210815
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.490326
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5744,9 +5880,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree12
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -5811,6 +5955,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 492240, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_RootOrder
       value: 153
@@ -5829,15 +5981,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492240, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.46286
+      value: -59.83
       objectReference: {fileID: 0}
     - target: {fileID: 492240, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6421051
+      value: 6.22
       objectReference: {fileID: 0}
     - target: {fileID: 492240, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 59.19033
+      value: 64.42
       objectReference: {fileID: 0}
     - target: {fileID: 492240, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5864,9 +6016,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree07
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -5921,9 +6081,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -6064,6 +6232,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6113,6 +6289,14 @@ PrefabInstance:
     - target: {fileID: 116594, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_Name
       value: pinetree03_b 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
@@ -6447,6 +6631,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 169198, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197984, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 453626, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_RootOrder
       value: 155
@@ -6505,9 +6697,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -6572,6 +6772,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree09
@@ -6839,9 +7047,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree14
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -7391,9 +7607,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree09
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -7448,6 +7672,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree25
@@ -7868,9 +8100,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree15
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -8027,6 +8267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 12
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 90
@@ -8139,15 +8387,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437470, guid: 4f891cfd97b933c439faa818326d389c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -120.5101
+      value: -113.2
       objectReference: {fileID: 0}
     - target: {fileID: 437470, guid: 4f891cfd97b933c439faa818326d389c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.75
+      value: -5.47
       objectReference: {fileID: 0}
     - target: {fileID: 437470, guid: 4f891cfd97b933c439faa818326d389c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.33332
+      value: 28.67
       objectReference: {fileID: 0}
     - target: {fileID: 437470, guid: 4f891cfd97b933c439faa818326d389c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8184,9 +8432,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree05
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -8338,6 +8594,14 @@ PrefabInstance:
     - target: {fileID: 120910, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_Name
       value: pinetree04_b 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 169198, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197984, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453626, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_RootOrder
@@ -8525,6 +8789,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 1
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 108
@@ -8547,7 +8819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.77211
+      value: 7.59
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8674,9 +8946,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree07
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -8731,9 +9011,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -8753,15 +9041,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -69.25285
+      value: -69.24
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.992111
+      value: 6.94
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.08033
+      value: 74.99
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9250,9 +9538,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -9710,7 +10006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.11
+      value: 8.79
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9718,7 +10014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.73
+      value: 2.02
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9772,9 +10068,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree06
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -10150,6 +10454,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 8
@@ -10207,6 +10519,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 424204, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -10438,7 +10758,11 @@ PrefabInstance:
     - target: {fileID: 2686307573188359787, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: NavMesh
       value: 
-      objectReference: {fileID: 11400000, guid: bb03539a6a022c943a871fd9f2b964c3, type: 2}
+      objectReference: {fileID: 11400000, guid: a10a8ce47ac40a24ab808bc1024d8f80, type: 2}
+    - target: {fileID: 6014222080177838747, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994363, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -10814,6 +11138,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 10
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 148
@@ -11005,9 +11337,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree15
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -11107,6 +11447,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
       value: 154
@@ -11534,9 +11882,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree11
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -11660,6 +12016,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree04
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -11701,6 +12065,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 16
@@ -11794,6 +12166,14 @@ PrefabInstance:
     - target: {fileID: 102486, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_Name
       value: pinetree02
+      objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
@@ -12128,6 +12508,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -12184,6 +12572,14 @@ PrefabInstance:
     - target: {fileID: 116594, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_Name
       value: pinetree03_b 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
@@ -12248,6 +12644,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree04
@@ -12405,9 +12809,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -12750,9 +13162,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree10
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -12967,7 +13387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.56
+      value: 9.27
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12975,7 +13395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.35
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13068,6 +13488,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 1
@@ -13289,6 +13717,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree12
@@ -13311,15 +13747,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424204, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.07286
+      value: -20.2
       objectReference: {fileID: 0}
     - target: {fileID: 424204, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21211243
+      value: 5.31
       objectReference: {fileID: 0}
     - target: {fileID: 424204, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.36033
+      value: 55.64
       objectReference: {fileID: 0}
     - target: {fileID: 424204, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13351,9 +13787,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree23
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -13479,9 +13923,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree10
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -13594,9 +14046,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -13775,6 +14235,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 6
@@ -13832,9 +14300,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree22
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -14145,9 +14621,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -14326,6 +14810,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -14463,9 +14955,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree08
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -14528,6 +15028,14 @@ PrefabInstance:
     - target: {fileID: 116594, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_Name
       value: pinetree03_b 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
@@ -14653,6 +15161,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 9
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 146
@@ -14706,9 +15222,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -14763,9 +15287,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -14823,11 +15355,7 @@ PrefabInstance:
     - target: {fileID: 2686307573188359787, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: NavMesh
       value: 
-      objectReference: {fileID: 11400000, guid: bb03539a6a022c943a871fd9f2b964c3, type: 2}
-    - target: {fileID: 6014222082157994353, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: a10a8ce47ac40a24ab808bc1024d8f80, type: 2}
     - target: {fileID: 6014222082157994363, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -15116,9 +15644,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -15161,9 +15697,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree20
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -15171,7 +15715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -97.332855
+      value: -96.21
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15179,7 +15723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.630318
+      value: 52.98
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15206,6 +15750,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 4
@@ -15973,7 +16525,7 @@ PrefabInstance:
     - target: {fileID: 2686307573188359787, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: NavMesh
       value: 
-      objectReference: {fileID: 11400000, guid: bb03539a6a022c943a871fd9f2b964c3, type: 2}
+      objectReference: {fileID: 11400000, guid: a10a8ce47ac40a24ab808bc1024d8f80, type: 2}
     - target: {fileID: 6014222082157994363, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -16455,9 +17007,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -17042,6 +17602,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 13
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -17309,6 +17877,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree06
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -17362,9 +17938,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -17533,6 +18117,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 11
@@ -17590,9 +18182,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree05
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -17638,6 +18238,14 @@ PrefabInstance:
     - target: {fileID: 102486, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_Name
       value: pinetree09
+      objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
@@ -17707,6 +18315,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 13
@@ -17764,6 +18380,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 18
@@ -17829,6 +18453,14 @@ PrefabInstance:
     - target: {fileID: 102486, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_Name
       value: pinetree12
+      objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
@@ -17908,9 +18540,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -18262,6 +18902,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree08
@@ -18429,6 +19077,14 @@ PrefabInstance:
     - target: {fileID: 120910, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_Name
       value: pinetree04_b 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 169198, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 197984, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 453626, guid: 561c5a4a1e601ab44b6362ec84f991a7, type: 3}
       propertyPath: m_RootOrder
@@ -18599,6 +19255,14 @@ PrefabInstance:
     - target: {fileID: 102486, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_Name
       value: pinetree11
+      objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
@@ -18818,9 +19482,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -18840,15 +19512,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.502853
+      value: -57.399994
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1820984
+      value: 3.4799957
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.230324
+      value: 62.009987
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18875,6 +19547,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 5
@@ -18995,6 +19675,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 14
@@ -19285,7 +19973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.46
+      value: 19.62
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19293,7 +19981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.57
+      value: -7.06
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19513,6 +20201,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 6
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 125
@@ -19569,6 +20265,14 @@ PrefabInstance:
     - target: {fileID: 102486, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_Name
       value: pinetree24
+      objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
@@ -19979,7 +20683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.55
+      value: 4.2300024
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19987,7 +20691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.98
+      value: 0.5000038
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20085,6 +20789,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree11
       objectReference: {fileID: 0}
+    - target: {fileID: 115414, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 124264, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -20107,7 +20819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2421112
+      value: 6.3399963
       objectReference: {fileID: 0}
     - target: {fileID: 436504, guid: 2d9056aa3247a9f46a10f76b64c762dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20138,6 +20850,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 3
@@ -20219,7 +20939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20227,7 +20947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.52
+      value: -4.82
       objectReference: {fileID: 0}
     - target: {fileID: 6014222082157994366, guid: a0d8b880400379241ae74c89d2141b06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20534,9 +21254,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 134906, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_Name
       value: pinetree02_b 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
@@ -20908,6 +21636,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree16
@@ -21222,6 +21958,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 12
@@ -21272,6 +22016,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 15
@@ -21468,9 +22220,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 112564, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 158744, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_Name
       value: pinetree21
+      objectReference: {fileID: 0}
+    - target: {fileID: 186450, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451928, guid: 96ea47baff8d27e4fb5d9bd496e18606, type: 3}
       propertyPath: m_RootOrder
@@ -21518,6 +22278,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree08
@@ -21630,6 +22398,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree17
@@ -21687,6 +22463,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 19
@@ -21741,6 +22525,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 11
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 85
@@ -21782,6 +22574,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 158826, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159286, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187748, guid: 3ebc9b26bc2a0f64890f47cdd58706a0, type: 3}
       propertyPath: m_Name
       value: pinetree01_b 9
@@ -21832,6 +22632,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 103360, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199164, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 477892, guid: 6db5e479d755ba64ca28159873c0ed94, type: 3}
       propertyPath: m_RootOrder
       value: 150
@@ -22200,6 +23008,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 152
@@ -22218,15 +23034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.872856
+      value: -54.769997
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3021088
+      value: 3.600006
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.60032
+      value: 62.379982
       objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22320,9 +23136,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 139968, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 144984, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_Name
       value: pinetree05_b 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 183916, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_RootOrder
@@ -22342,7 +23166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.817139
+      value: 5.51
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22350,7 +23174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.180321
+      value: 9.35
       objectReference: {fileID: 0}
     - target: {fileID: 446456, guid: 4d1c6678d20799241a915eeba569a1b6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22600,6 +23424,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: pinetree03_b 7
       objectReference: {fileID: 0}
+    - target: {fileID: 144132, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146002, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434876, guid: 053062e94384e2849a01c6c266f3ccab, type: 3}
       propertyPath: m_RootOrder
       value: 130
@@ -22764,6 +23596,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1036186485}
     m_Modifications:
+    - target: {fileID: 130512, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 132622, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 177598, guid: 99a8196b80cd5f147ae6e6435ab1fadc, type: 3}
       propertyPath: m_Name
       value: pinetree14

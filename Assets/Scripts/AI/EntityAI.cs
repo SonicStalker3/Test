@@ -26,6 +26,10 @@ public class EntityAI : MonoBehaviour
 
     void Start()
     {
+        if (!NavMesh)
+        {
+            NavMesh = ScriptableObject.CreateInstance<NavigationSystemSettings>();
+        }
         Enemies = GetComponent<Enemy>();
         agent = GetComponent<NavMeshAgent>();
         // Инициализация ссылки на игрока, если она не была установлена через редактор
