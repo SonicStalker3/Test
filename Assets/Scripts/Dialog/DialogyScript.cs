@@ -89,6 +89,11 @@ public class DialogyScript : MonoBehaviour
         }
     }
 
+    public void SetDialog(DialogObject dialog)
+    {
+        this.dialog = dialog;
+    }
+
     public void OnTriggerEnter(Collider other)
         {
             _player = other.transform.GetComponent<Player>();
@@ -96,13 +101,11 @@ public class DialogyScript : MonoBehaviour
             {
                 _player.isControll = false;
                 OnDialogEnd += _player.OnEndDialog;
-                //_input = _player.GetComponent<InputSys>();
                 DiagPanel = other.transform.GetComponent<Player>().DiagPanel.GetComponent<Button>();
                 HistoryPanel = other.transform.GetComponent<Player>().HistoryPanel;
                 HistoryPanelView = other.transform.GetComponent<Player>().HistoryPanelView;
                 is_Triggert = true;
                 if (DiagPanel != null) DiagPanel.onClick.AddListener(NextMsg);
-                //_input._input.actions["NextBtn"].performed += NextMsg;
                 dialog.Reset();
                 if (DiagList is null)
                 {
@@ -147,20 +150,6 @@ public class DialogyScript : MonoBehaviour
         }
         private void HistoryToogle() 
         {
-            // if (DiagList is null)
-            // {
-            //     DiagList = new GameObject[dialog.dialog.Length];
-            //     for (int i = 0; i < dialog.dialog.Length; i++)
-            //     {
-            //         var x = Instantiate(HistoryChoice, HistoryPanelView.transform);
-            //         x.SetActive(false);
-            //         var i1 = i;
-            //         x.GetComponent<Button>().onClick.AddListener(() =>{MsgChange(i1); });
-            //         x.GetComponentInChildren<TextMeshProUGUI>().text = dialog.dialog[i].who + ": " + dialog.dialog[i].text;
-            //         DiagList[i] = x;
-            //     }
-            // }
-
             HistoryUpdate();
             HistoryPanel.SetActive(!HistoryPanel.activeSelf);
         }
@@ -173,22 +162,4 @@ public class DialogyScript : MonoBehaviour
             Debug.Log(s);
             HistoryUpdate();
         }
-
-        /*    private void NextMsg(InputAction.CallbackContext context)
-            {
-                var dialogTxt = dialog.Next();
-                if (dialogTxt !=null)
-                {
-                    NameField.text = dialogTxt.who;
-                    DialogField.text = dialogTxt.text;
-
-                }
-                else
-                {
-                    OnDialogEnd.Invoke();
-                    //OnDialogEnd -= Player.OnEndDialog;
-                }
-                Debug.Log("1");
-
-            }*/
 }

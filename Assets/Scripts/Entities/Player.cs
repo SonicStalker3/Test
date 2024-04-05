@@ -120,17 +120,18 @@ public class Player : StatsEntity
     private void Move()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Vector2 LookDelta  = InputSys.LookInput * rotateSpeed * InputSys.cursor_sensitivity;
         /*if (playerModel)
         {
             playerModel.Rotate(0, _inputSys.lookInput.x * rotateSpeed, 0);
             playerCamera.Rotate(-_inputSys.lookInput.y * rotateSpeed, _inputSys.lookInput.x * rotateSpeed , 0);
         }*/
-        transform.Rotate(0, InputSys.LookInput.x * rotateSpeed, 0);
-        playerCamera.Rotate(-InputSys.LookInput.y * rotateSpeed, 0, 0);
+        transform.Rotate(0, LookDelta.x, 0);
+        playerCamera.Rotate(-LookDelta.y, 0, 0);
         
         if (playerCamera.localRotation.eulerAngles.y != 0)
         {
-            playerCamera.Rotate(InputSys.LookInput.y * rotateSpeed, 0, 0);
+            playerCamera.Rotate(LookDelta.y, 0, 0);
         }
         
         moveDirection = new Vector3(InputSys.MoveInput.x * speed, moveDirection.y, InputSys.MoveInput.y * speed);

@@ -676,14 +676,17 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="VSSettingsProvider">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
@@ -702,9 +705,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>

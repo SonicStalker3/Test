@@ -38,7 +38,7 @@ public class Requirement
     [Range(1, 50)]
     public int itemValues = 1;
     
-    public NPC npcReference;
+    public string npcReference;
     public DialogObject npcValues;
     
     public string levelReference;

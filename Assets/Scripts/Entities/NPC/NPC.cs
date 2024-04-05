@@ -8,8 +8,13 @@ public class NPC : StatsEntity
     [Header("NPC Properties")] 
     public bool isFollow = true;
     public float followDistance = 5f; // Расстояние, на котором NPC следует за игроком
-    private Player player;
+    //protected Player _player;
     private NavMeshAgent navMeshAgent;
+    [Range(1,100)]
+    public float triggerRadius;
+    private bool is_Triggert;
+    [SerializeField]
+    private GameObject IteractUI;
     
     [Header("Dialog System")]
     [SerializeField, Tooltip("Сюда нужно положить корневой файл диалога('DialogObject'(Instance of Scriptable Object))")]
@@ -17,26 +22,23 @@ public class NPC : StatsEntity
 
     //private InputSys _input;
 
-    private Button DiagPanel;
-    private GameObject HistoryPanel;
-    private GameObject HistoryPanelView;
-    private GameObject[] DiagList;
-    private GameObject HistoryChoice;
+    private DialogyScript _dialogyScript;
 
-    [Header("Dialog UI")]
+    /*[Header("Dialog UI")]
     public Text NameField;
-    public Text DialogField;
+    public Text DialogField;*/
 
-    private bool is_Triggert;
+
     //private bool prev_state = false;
 
     public delegate void EndDialogEvent();
     public EndDialogEvent OnDialogEnd;
     private Player _player;
 
-    private void Start()
+    private void Awake()
     {
     Init();
+    NPCManager.RegisterNPC(this);
     }
 
     protected new void Init()
@@ -44,20 +46,44 @@ public class NPC : StatsEntity
         name_color = Color.green;
         name_color.a = 1;
         base.Init();
+        animator.SetFloat("Speed",moveSpeed/5);
         isImmortal = true;
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        Debug.Log(player);
+        Debug.Log(_player);
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.stoppingDistance = followDistance;
+        //navMeshAgent.stoppingDistance = ;
         navMeshAgent.speed = moveSpeed;
+        
     }
 
     protected void FollowPlayer()
     {
-        if(isFollow) navMeshAgent.SetDestination(_player.transform.position);
+        if (isFollow)
+        {
+            var pT = _player.transform;
+            if(Vector3.Distance(transform.position,pT.position) > followDistance)
+                animator.SetBool("isWalk", !navMeshAgent.SetDestination(
+                    pT.position -(pT.position - transform.position).normalized * followDistance));
+            ; //navMeshAgent.SetDestination(_player.transform.position);
+        }
     }
-    private void Update()
+    protected void Update()
     {
         FollowPlayer();
+        CheckIteract();
+    }
+
+    private void CheckIteract()
+    {
+        if (Vector3.Distance(_player.transform.position, transform.position) <  triggerRadius)
+        {
+            IteractUI.GetComponentInChildren<Image>().sprite = InputSys.ShowHelper("Interact");
+            IteractUI.SetActive(!is_Triggert);
+            if (InputSys.InteractBtn && !is_Triggert)
+            {
+                Debug.Log("Start Dialog");
+            }
+            //Debug.Log("Can Iteract");
+        }
     }
 }

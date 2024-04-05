@@ -15,6 +15,7 @@ public class Assistent : NPC
 
     private void Update()
     {
+        base.Update();
         FollowPlayer();
         Collider[] colliders = Physics.OverlapSphere(transform.position, searchRadius);
         Enemy closestEnemy = GetClosestEnemy(colliders);

@@ -42,7 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EntityOverlay.cs" />
+    <Compile Include="Assets\Resources\Scenes\OptionListManager.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IItemEffect.cs" />
     <Compile Include="Assets\Scripts\UI\SceneChanger.cs" />
+    <Compile Include="Assets\Scripts\UI\FirstOptionSelected.cs" />
     <Compile Include="Assets\Scripts\Quests\StoryLine.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestObject.cs" />
@@ -52,28 +55,26 @@
     <Compile Include="Assets\Scripts\Entities\StatsEntity.cs" />
     <Compile Include="Assets\Scripts\AI\EntityAI.cs" />
     <Compile Include="Assets\Scripts\Entities\NPC\Assistent.cs" />
-    <Compile Include="Assets\Scripts\InputSys.cs" />
-    <Compile Include="Assets\Scripts\UI\SettingsSystem.cs" />
-    <Compile Include="Assets\Scripts\Dialog\DialogyScript.cs" />
-    <Compile Include="Assets\Scripts\Scriptable\Dialog\DialogText.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\UI\GameMenu.cs" />
-    <Compile Include="Assets\Scripts\AI\AttackManager.cs" />
-    <Compile Include="Assets\Scripts\ControllsList.cs" />
-    <Compile Include="Assets\Resources\PropertyDrawers\RequirementDrawer.cs" />
-    <Compile Include="Assets\Resources\Scenes\OptionListManager.cs" />
-    <Compile Include="Assets\Scripts\UI\FirstOptionSelected.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\NPCManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Entities\NPC\NPC.cs" />
-    <Compile Include="Assets\Scripts\Entities\Player.cs" />
-    <Compile Include="Assets\Scripts\Scriptable\Dialog\DialogObject.cs" />
-    <Compile Include="Assets\Scripts\Entities\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Entities\Entity.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IItemEffect.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IObjectsEffect.cs" />
-    <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\InputSys.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingsSystem.cs" />
     <Compile Include="Assets\Scripts\Scriptable\ItemHandler.cs" />
+    <Compile Include="Assets\Scripts\Dialog\DialogyScript.cs" />
+    <Compile Include="Assets\Scripts\Entities\Player.cs" />
+    <Compile Include="Assets\Scripts\Scriptable\Dialog\DialogText.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Scriptable\Dialog\DialogObject.cs" />
+    <Compile Include="Assets\Scripts\UI\GameMenu.cs" />
+    <Compile Include="Assets\Scripts\Entities\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IObjectsEffect.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\AI\AttackManager.cs" />
+    <Compile Include="Assets\Scripts\Entities\Entity.cs" />
+    <Compile Include="Assets\Scripts\ControllsList.cs" />
+    <Compile Include="Assets\Resources\PropertyDrawers\RequirementDrawer.cs" />
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Adventure RPG Essentials Music Pack v1.1\ReadMe.txt" />
@@ -709,14 +710,17 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="VSSettingsProvider">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
@@ -735,9 +739,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>C:\Users\Arseniy\Test\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>

@@ -21,9 +21,10 @@ MonoBehaviour:
   preQuestDialog: {fileID: 0}
   postQuestDialog: {fileID: 0}
   requirements:
-  - type: 0
-    description: 
-    itemReference: 
-    npcReference: {fileID: 0}
+  - type: 1
+    itemReference: {fileID: 0}
+    itemValues: 1
+    npcReference: 
+    npcValues: {fileID: 0}
     levelReference: 
   questState: 0

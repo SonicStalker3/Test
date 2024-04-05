@@ -20,6 +20,7 @@ public class EntityAI : MonoBehaviour
     private float AttackRange = 1.5f;
 
     private int current_point = 0;
+    private Animator anim;
     private NavMeshAgent agent;
     private bool isAttacking;
     [SerializeField] private int attackRate;
@@ -126,7 +127,8 @@ public class EntityAI : MonoBehaviour
          }
          else
          {
-             agent.SetDestination(nextPoint);
+             transform.GetComponent<Enemy>().Move(nextPoint);
+             //agent.SetDestination(nextPoint);
          }
      }
 
