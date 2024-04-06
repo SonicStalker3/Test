@@ -46,7 +46,6 @@ public class NPC : StatsEntity
         name_color = Color.green;
         name_color.a = 1;
         base.Init();
-        animator.SetFloat("Speed",moveSpeed/5);
         isImmortal = true;
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Debug.Log(_player);
@@ -60,11 +59,23 @@ public class NPC : StatsEntity
     {
         if (isFollow)
         {
+            var velocity = navMeshAgent.velocity;
+            bool isWalking = velocity.magnitude > 0.1f;
+            animator.SetFloat("SpeedHorizontal",velocity.x);
+            animator.SetFloat("SpeedVertical",velocity.y);
             var pT = _player.transform;
-            if(Vector3.Distance(transform.position,pT.position) > followDistance)
-                animator.SetBool("isWalk", !navMeshAgent.SetDestination(
-                    pT.position -(pT.position - transform.position).normalized * followDistance));
-            ; //navMeshAgent.SetDestination(_player.transform.position);
+            if (Vector3.Distance(transform.position, pT.position) > followDistance)
+                navMeshAgent.SetDestination(
+                    pT.position - (pT.position - transform.position).normalized * followDistance);
+            if (animator)
+            {
+                if (animator.GetBool("isWalk") != isWalking)
+                {
+                    Debug.Log($"{animator.GetBool("isWalk")} {isWalking}");
+                    animator.SetBool("isWalk", isWalking);
+                }
+            }
+            //navMeshAgent.SetDestination(_player.transform.position);
         }
     }
     protected void Update()

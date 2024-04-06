@@ -30,9 +30,14 @@ public class Assistent : NPC
     private IEnumerator AttackWithDelay()
     {
         isAttacking = true;
+        animator.SetFloat("AttackType", Random.Range(1,4));
+        animator.SetFloat("Blend", 0.5f);
+        //animator.SetFloat("SpeedAttack",attackRate);
         yield return new WaitForSeconds(1 / attackRate);
         AttackEnemy();
         isAttacking = false;
+        animator.SetFloat("AttackType", 0);
+        animator.SetFloat("Blend", 0);
     }
 
     private void AttackEnemy()
