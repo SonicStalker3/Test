@@ -1,9 +1,11 @@
+using System.Collections;
 using Scriptable.Dialog;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DialogyScript : MonoBehaviour
@@ -27,6 +29,8 @@ public class DialogyScript : MonoBehaviour
 
     public delegate void EndDialogEvent();
     public EndDialogEvent OnDialogEnd;
+    [SerializeField]
+    private Animator animator;
     private Player _player;
 
     private void Awake()
@@ -74,7 +78,8 @@ public class DialogyScript : MonoBehaviour
 
         if (InputSys.NextBtn)
         {
-            var dialogTxt = dialog.Next();
+            NextMsg();
+            /*var dialogTxt = dialog.Next();
             if (dialogTxt != null)
             {
                 NameField.text = dialogTxt.who;
@@ -85,7 +90,7 @@ public class DialogyScript : MonoBehaviour
             {
                 OnDialogEnd.Invoke();
                 //OnDialogEnd -= Player.OnEndDialog;
-            }
+            }*/
         }
     }
 
@@ -132,18 +137,46 @@ public class DialogyScript : MonoBehaviour
                 DiagList[i].SetActive(true);
             }
         }
+
+        private IEnumerator Dialog(DialogText dialogTxt)
+        {
+            animator.SetFloat("SayBlend", Random.value);
+            animator.SetBool("IsSpeech",true);
+            NameField.text = dialogTxt.who;
+            DialogField.text = dialogTxt.text;
+            HistoryUpdate();
+            yield return new WaitForSeconds(5);
+            animator.SetBool("IsSpeech",false);
+            yield break;
+        }
+
+        private IEnumerator DialogEnd()
+        {
+            yield return new WaitForSeconds(2);
+            animator.SetBool("IsEnded",true);
+            OnDialogEnd.Invoke();
+            animator.SetBool("IsEnded",false);
+            yield break;
+        }
+
         private void NextMsg()
         {
             var dialogTxt = dialog.Next();
             if (dialogTxt !=null)
             {
+                StartCoroutine(nameof(Dialog), dialogTxt);
+                /*animator.SetBool("IsSpeech",true);
                 NameField.text = dialogTxt.who;
                 DialogField.text = dialogTxt.text;
                 HistoryUpdate();
+                animator.SetBool("IsSpeech",false);*/
             }
             else
             {
+                StartCoroutine(nameof(DialogEnd));
+                /*animator.SetBool("IsEnded",true);
                 OnDialogEnd.Invoke();
+                animator.SetBool("IsEnded",false);*/
             }
 
         

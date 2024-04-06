@@ -40,9 +40,12 @@ public class Enemy : StatsEntity
 
     public void Move(Vector3 dest)
     {
+        agent.SetDestination(dest);
         if (animator)
         {
-            animator.SetBool("isWalk", !agent.SetDestination(dest));
+            bool isWalking = agent.velocity.magnitude > 0.1f;
+            //Debug.Log(agent.velocity.magnitude);
+            animator.SetBool("isWalk", isWalking);
         }
         
     }
