@@ -1,75 +1,79 @@
 using System.Collections;
 using UnityEngine;
 
-public class Assistent : NPC
+namespace Entities.NPC
 {
-    [Header("Assistent Properties")]
-    public float searchRadius = 10f;
-    public float attackRate = 2f;
-
-    private bool isAttacking = false;
-    void Start()
+    public class Assistent : global::Entities.NPC.NPC
     {
-        base.Init();
-    }
+        [Header("Assistent Properties")]
+        public float searchRadius = 10f;
+        public float attackRate = 2f;
 
-    private void Update()
-    {
-        base.Update();
-        FollowPlayer();
-        Collider[] colliders = Physics.OverlapSphere(transform.position, searchRadius);
-        Enemy closestEnemy = GetClosestEnemy(colliders);
-
-        if (closestEnemy != null && !isAttacking)
+        private bool isAttacking = false;
+        private Enemy closestEnemy;
+        void Start()
         {
-            StartCoroutine(AttackWithDelay());
+            base.Init();
         }
-        UpdateGUI();
-    }
-    
-    private IEnumerator AttackWithDelay()
-    {
-        isAttacking = true;
-        animator.SetFloat("AttackType", Random.Range(1,4));
-        animator.SetFloat("Blend", 0.5f);
-        //animator.SetFloat("SpeedAttack",attackRate);
-        yield return new WaitForSeconds(1 / attackRate);
-        AttackEnemy();
-        isAttacking = false;
-        animator.SetFloat("AttackType", 0);
-        animator.SetFloat("Blend", 0);
-    }
 
-    private void AttackEnemy()
-    {
-        Enemy closestEnemy = GetClosestEnemy(Physics.OverlapSphere(transform.position, searchRadius));
-        if (closestEnemy != null)
+        private new void Update()
         {
-            closestEnemy.TakeDamage(baseDamage);
-        }
-    }
+            base.Update();
+            FollowPlayer();
+            Collider[] colliders = Physics.OverlapSphere(transform.position, searchRadius);
+            closestEnemy = GetClosestEnemy(colliders);
 
-    private Enemy GetClosestEnemy(Collider[] colliders)
-    {
-        Enemy closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (var collider in colliders)
-        {
-            // Проверяем, является ли объект противником
-            Enemy enemy = collider.GetComponent<Enemy>();
-            if (enemy != null)
+            if (closestEnemy != null && !isAttacking)
             {
-                float distance = Vector3.Distance(transform.position, collider.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestEnemy = enemy;
-                }
+                StartCoroutine(AttackWithDelay());
+            }
+            UpdateGUI();
+        }
+    
+        private IEnumerator AttackWithDelay()
+        {
+            isAttacking = true;
+            animator.SetFloat("AttackType", Random.Range(1,4));
+            animator.SetFloat("Blend", 0.5f);
+            //animator.SetFloat("SpeedAttack",attackRate);
+            yield return new WaitForSeconds(1 / attackRate);
+            AttackEnemy();
+            isAttacking = false;
+            animator.SetFloat("AttackType", 0);
+            animator.SetFloat("Blend", 0);
+        }
+
+        private void AttackEnemy()
+        {
+            closestEnemy = GetClosestEnemy(Physics.OverlapSphere(transform.position, searchRadius));
+            if (closestEnemy != null)
+            {
+                closestEnemy.TakeDamage(baseDamage);
             }
         }
 
-        //Debug.Log(closestEnemy);
-        return closestEnemy;
+        private Enemy GetClosestEnemy(Collider[] colliders)
+        {
+            closestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (var collider in colliders)
+            {
+                // Проверяем, является ли объект противником
+                Enemy enemy = collider.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    float distance = Vector3.Distance(transform.position, collider.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestEnemy = enemy;
+                    }
+                }
+            }
+
+            //Debug.Log(closestEnemy);
+            return closestEnemy;
+        }
     }
 }

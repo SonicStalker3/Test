@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Interfaces.Entities
 {
     public interface IDamageble
     {

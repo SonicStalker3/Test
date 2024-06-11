@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cf7849e236a604e999404099083328, type: 3}
   m_Name: 1_MR
   m_EditorClassIdentifier: 
+  names:
+  - Player
+  - "\u041C\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u0430"
   dialog:
   - {fileID: 11400000, guid: 650214d116286f041af110438315de6c, type: 2}
   - {fileID: 11400000, guid: f6d855e9cd647794681e4ddc0f9f2512, type: 2}
@@ -22,4 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6495774ec6231eb48b2f818baf5ee4a1, type: 2}
   - {fileID: 11400000, guid: a7a88090b7e7c914c8c9007c06e91b2a, type: 2}
   - {fileID: 11400000, guid: 4fc64594c5220b24b830eafd585cfde3, type: 2}
-  iteration: 0
+  iteration: 9

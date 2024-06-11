@@ -14,9 +14,8 @@ public enum ActionMaps: byte
 ///Wrapper for easy interaction with the new Input System
 public static class InputSys
 {
-    public static string IconsPath => _iconsPath;
-    private static string _iconsPath = "Graphics/Buttons";
-    
+    private static string IconsPath { get; } = "Graphics/Buttons";
+
     //public static string IconsGroup = "";
     private static Vector2 _moveInput;
     private static Vector2 _lookInput;
@@ -25,6 +24,7 @@ public static class InputSys
     private static bool _historyBtn;
     private static bool _attackBtn;
     private static bool _interactBtn;
+    private static bool _MenuBtn;
     
     private static InputAction _navigateUI;
     
@@ -78,6 +78,7 @@ public static class InputSys
         //_jumpInput = _gameplayActionMap.FindAction("Jump").triggered;
         _attackBtn = GameplayActionMap.FindAction("Attack").triggered;
         _interactBtn = GameplayActionMap.FindAction("Interact").triggered;
+        _MenuBtn = GameplayActionMap.FindAction("Menu").triggered;
         
         _nextBtn = DialogActionMap.FindAction("NextMessage").triggered;
         _historyBtn = DialogActionMap.FindAction("History").triggered;
@@ -208,6 +209,7 @@ public static class InputSys
     public static bool HistoryBtn => _historyBtn;
     public static bool AttackBtn => _attackBtn;
     public static bool InteractBtn => _interactBtn;
+    public static bool MenuBtn => _MenuBtn;
     public static ActionMaps CurrentActionMap => _actionMapEnum;
     public static InputAction NavigateUI => _navigateUI;
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scriptable.Dialog
@@ -6,6 +7,7 @@ namespace Scriptable.Dialog
     [CreateAssetMenu(menuName = "Dialog/Dialog", order=-1)]
     public class DialogObject : ScriptableObject
     {
+        public string[] names;
         public DialogText[] dialog;
         public int iteration;
 

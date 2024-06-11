@@ -424,6 +424,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   animator: {fileID: 0}
   DetectionRange: 5
+  searchRadius: 10
+  attackRate: 2
 --- !u!54 &6014222082157994353
 Rigidbody:
   m_ObjectHideFlags: 0

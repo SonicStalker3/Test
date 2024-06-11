@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject OptionsSelected;
     public GameObject CloseOptionBtn;
+
+    public bool ShoudOpen = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -30,6 +33,11 @@ public class GameMenu : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        gameObject.SetActive(ShoudOpen);
+    }
+
     public void OpenMenu()
     {
         gameObject.SetActive(true);
@@ -38,7 +46,8 @@ public class GameMenu : MonoBehaviour
     
     public void StartBtn()
     {
-        gameObject.SetActive(false);
+        ShoudOpen = false;
+        gameObject.SetActive(ShoudOpen);
     }
     
     public void ExitBtn()

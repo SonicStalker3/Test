@@ -47,7 +47,7 @@
     <Compile Include="Assets\Scripts\UI\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\UI\FirstOptionSelected.cs" />
     <Compile Include="Assets\Scripts\Quests\StoryLine.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IDamageble.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Entities\IDamageble.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestObject.cs" />
     <Compile Include="Assets\Scripts\Interfaces\Iitem.cs" />
     <Compile Include="Assets\Scripts\Scriptable\AI\NavigationSystemSettings.cs" />
@@ -60,9 +60,9 @@
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Entities\NPC\NPC.cs" />
     <Compile Include="Assets\Scripts\InputSys.cs" />
+    <Compile Include="Assets\DialogManager.cs" />
     <Compile Include="Assets\Scripts\UI\SettingsSystem.cs" />
     <Compile Include="Assets\Scripts\Scriptable\ItemHandler.cs" />
-    <Compile Include="Assets\Scripts\Dialog\DialogyScript.cs" />
     <Compile Include="Assets\Scripts\Entities\Player.cs" />
     <Compile Include="Assets\Scripts\Scriptable\Dialog\DialogText.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
     <Compile Include="Assets\Scripts\ControllsList.cs" />
     <Compile Include="Assets\Resources\PropertyDrawers\RequirementDrawer.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\Entities\ISpeakable.cs" />
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Resources\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Adventure RPG Essentials Music Pack v1.1\ReadMe.txt" />
