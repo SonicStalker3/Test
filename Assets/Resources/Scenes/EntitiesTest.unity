@@ -11678,6 +11678,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2622840365959138581, guid: 6e1d57cff81b03148b340ac8f129a5d4, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622840365959138581, guid: 6e1d57cff81b03148b340ac8f129a5d4, type: 3}
       propertyPath: DiagPanel
       value: 
       objectReference: {fileID: 1968499691}
@@ -12100,7 +12104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8356206170253519239, guid: bf76073e53fbedb469dac8921e4e6011, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8356206170253519241, guid: bf76073e53fbedb469dac8921e4e6011, type: 3}
       propertyPath: m_Camera
