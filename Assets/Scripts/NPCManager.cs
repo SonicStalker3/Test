@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Entities.NPC;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// NPC's Quest and Dialogs Manager
@@ -33,7 +34,8 @@ public static class NpcManager
         }
 
         dm = _dm;
-        NpcDictionary[npc.name] = npc;
+        NpcDictionary[npc.E_name] = npc;
+        //npc.Destroy += (x) => UnRegisterNpc(npc.E_name);
     }
 
     public static NPC GetNpc(string name)
@@ -45,6 +47,18 @@ public static class NpcManager
         else
         {
             throw new Exception($"NPC with name '{name}' not found.");
+        }
+    }
+
+    public static void UnRegisterNpc(string name)
+    {
+        if (NpcDictionary.TryGetValue(name, out var npc))
+        {
+            NpcDictionary.Remove(name);
+        }
+        else
+        {
+            throw new Exception($"NPC with name '{name}' was not found to delete.");
         }
     }
 }

@@ -1,9 +1,11 @@
+using System;
 using Interfaces.Entities;
 using Scriptable.Dialog;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Entities.NPC
 {
@@ -143,6 +145,12 @@ namespace Entities.NPC
         {
             NameFormat = "{0}";
             base.UpdateGUI();
+        }
+
+        private void OnDestroy()
+        {
+            NpcManager.UnRegisterNpc(E_name);
+            Debug.Log("Good Bye");
         }
     }
 }

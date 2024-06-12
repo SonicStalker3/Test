@@ -11,6 +11,7 @@ public class GameMenu : MonoBehaviour
     public GameObject OptionsObj;
     public GameObject MenuObj;
     private EventSystem _eventSystem;
+    public EventSystem EventSystem => _eventSystem;
     public GameObject[] OptionsList;
 
     [SerializeField]
@@ -21,9 +22,10 @@ public class GameMenu : MonoBehaviour
 
     public bool ShoudOpen = false;
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         _eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        if (!_eventSystem) Debug.Log("Null");
         var panel = OptionsObj.transform.GetChild(1);//GameObject.Find("OptionPanels");
         int children = panel.transform.childCount;
         OptionsList = new GameObject[children];
@@ -58,6 +60,7 @@ public class GameMenu : MonoBehaviour
     public void OpenOptions() 
     {
         OptionsObj.SetActive(true);
+        Debug.Log(_eventSystem.GetInstanceID());
         MenuSelected = _eventSystem.currentSelectedGameObject;
         OptionsSelected = !OptionsSelected ? _eventSystem.currentSelectedGameObject : CloseOptionBtn;
         _eventSystem.SetSelectedGameObject(OptionsSelected);
@@ -67,6 +70,7 @@ public class GameMenu : MonoBehaviour
     public void CloseOptions() 
     {
         MenuObj.SetActive(true);
+        Debug.Log(_eventSystem.GetInstanceID());
         _eventSystem.SetSelectedGameObject(MenuSelected);
         OptionsObj.SetActive(false);
     }
@@ -90,6 +94,6 @@ public class GameMenu : MonoBehaviour
     }
     public void OnGraphicsChanged(float x)
     {
-        InputSys.cursor_sensitivity = x;
+        InputSys.CursorSensitivity = x;
     }
 }

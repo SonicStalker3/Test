@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public enum ActionMaps: byte
+public enum ActionMaps : byte
 {
-    GamePlay=0,
+    GamePlay = 0,
     Dialog
 }
 
@@ -24,81 +25,94 @@ public static class InputSys
     private static bool _historyBtn;
     private static bool _attackBtn;
     private static bool _interactBtn;
-    private static bool _MenuBtn;
-    
+    private static bool _menuBtn;
+
     private static InputAction _navigateUI;
-    
+
     private static ActionMaps _actionMapEnum;
     private static InputActionMap _currentActionMap;
-    private static string Type = "Keyboard&Mouse";
-    
+    private static string _type = "Keyboard&Mouse";
 
-    private static readonly InputActionMap GameplayActionMap;
-    private static readonly InputActionMap DialogActionMap;
-    
-    public static float cursor_sensitivity = 2;
-    private static readonly InputActionAsset _gameplayControls;
+    private static PlayerInput _inputHandler;
 
-    static InputSys()
+
+    private static InputActionMap GameplayActionMap;
+    private static InputActionMap DialogActionMap;
+    private static InputActionMap UIActionMap;
+
+    public static float CursorSensitivity = 2;
+    private static InputActionAsset GameplayControls;
+
+    public static void RegisterPlayerHandler(PlayerInput inputHandler)
     {
-        _gameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
-        GameplayActionMap = _gameplayControls.FindActionMap("GamePlay");
-        DialogActionMap = _gameplayControls.FindActionMap("Dialog");
-        _navigateUI = _gameplayControls.FindActionMap("UI").FindAction("Navigate");
+        _inputHandler = inputHandler;
 
-        GameplayActionMap.FindAction("Jump").performed += OnJump;
-        GameplayActionMap.FindAction("Rotate").performed += TypeCheck;
+        if(!GameplayControls) GameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");//_inputHandler.actions;//
         
-        SwitchActionMap(ActionMaps.GamePlay);
+        GameplayActionMap = _inputHandler.actions.FindActionMap("GamePlay");
+        DialogActionMap = _inputHandler.actions.FindActionMap("Dialog");
+        UIActionMap = _inputHandler.actions.FindActionMap("UI");
+        
+
+        
+        _inputHandler.actions["Jump"].performed += OnJump;
+        _inputHandler.onControlsChanged += TypeCheck;
+        // _inputHandler
+    }
+
+    public static void RegisterUIHandler(PlayerInput inputHandler)
+    {
+        _navigateUI = inputHandler.actions["Navigate"];
     }
 
     private static void OnJump(InputAction.CallbackContext context)
     {
         _jumpInput = context.ReadValueAsButton();
-
     }
 
-    private static void TypeCheck(InputAction.CallbackContext context)
+    private static void TypeCheck(PlayerInput context)
     {
-        foreach (var controlScheme in _gameplayControls.controlSchemes)
-        {
-            if (controlScheme.SupportsDevice(context.control.device))
-                Type = controlScheme.name;
-        }
-        //Debug.Log(Type);
+        _type = context.currentControlScheme;
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
     public static void Update()
     {
-        _moveInput = GameplayActionMap.FindAction("Move").ReadValue<Vector2>();
+        /*_moveInput = GameplayActionMap.FindAction("Move").ReadValue<Vector2>();
         _lookInput = GameplayActionMap.FindAction("Rotate").ReadValue<Vector2>();
         //_jumpInput = _gameplayActionMap.FindAction("Jump").triggered;
         _attackBtn = GameplayActionMap.FindAction("Attack").triggered;
         _interactBtn = GameplayActionMap.FindAction("Interact").triggered;
-        _MenuBtn = GameplayActionMap.FindAction("Menu").triggered;
-        
-        _nextBtn = DialogActionMap.FindAction("NextMessage").triggered;
-        _historyBtn = DialogActionMap.FindAction("History").triggered;
+        _menuBtn = GameplayActionMap.FindAction("Menu").triggered;
 
-        
-        /*_moveInput = _input.actions["Move"].ReadValue<Vector2>();
-        _lookInput = _input.actions["Rotate"].ReadValue<Vector2>() * cursor_sensitivity;
-        _nextBtn = _input.actions["NextMessage"].triggered;
-        _historyBtn = _input.actions["History"].triggered;
-        _attackBtn = _input.actions["Attack"].triggered;*/
+        _nextBtn = DialogActionMap.FindAction("NextMessage").triggered;
+        _historyBtn = DialogActionMap.FindAction("History").triggered;*/
+
+
+        _moveInput = _inputHandler.actions["Move"].ReadValue<Vector2>();
+        _lookInput = _inputHandler.actions["Rotate"].ReadValue<Vector2>() * CursorSensitivity;
+        _attackBtn = _inputHandler.actions["Attack"].triggered;
+        _interactBtn = _inputHandler.actions["Interact"].triggered;
+        _menuBtn = _inputHandler.actions["Menu"].triggered;
+
+        _nextBtn = _inputHandler.actions["NextMessage"].triggered;
+        _historyBtn = _inputHandler.actions["History"].triggered;
     }
+
     /// <summary>
     /// 
     /// </summary>
     /// <returns>Возвращает словарь с ключом в ввиде пути("Type/Action") а в качестве значения ссылку на действие(Action)</returns>
+    
     public static Dictionary<string, InputAction> ActionsList()
     {
+        if(!GameplayControls) GameplayControls = Resources.Load<InputActionAsset>("GamePlayControlls");
+        
         Dictionary<string, InputAction> actionDict = new Dictionary<string, InputAction>();
 
-        foreach (var actionMap in _gameplayControls.actionMaps)
+        foreach (var actionMap in GameplayControls.actionMaps)
         {
             foreach (var action in actionMap.actions)
             {
@@ -107,14 +121,15 @@ public static class InputSys
             }
         }
 
-        /*
+        
         foreach (var VARIABLE in actionDict)
         {
             Debug.Log(VARIABLE.Key);
-        }*/
-        
+        }
+
         return actionDict;
     }
+
 
     /// <summary>
     /// 
@@ -141,67 +156,37 @@ public static class InputSys
         }
 
         _currentActionMap.Enable();
-        _actionMapEnum = actionMap;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="actionMaps"></param>
-    public static void SwitchActionMap(ActionMaps[] actionMaps)
-    {
-        if (_currentActionMap != null)
-        {
-            _currentActionMap.Disable();
-        }
-
-        foreach (ActionMaps map in (ActionMaps[])Enum.GetValues(typeof(ActionMaps)))
-        {
-            switch (map)
-            {
-                case ActionMaps.GamePlay:
-                    _currentActionMap = GameplayActionMap;
-                    break;
-                case ActionMaps.Dialog:
-                    _currentActionMap = DialogActionMap;
-                    break;
-                default:
-                    _currentActionMap = GameplayActionMap;
-                    break;
-            }
-
-            if (_currentActionMap != null) _currentActionMap.Enable();
-            _actionMapEnum = map;
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="Action"></param>
-    /// <param name="Type"></param>
-    public static void Bind(InputAction Action)
+    //_currentActionMap.Enable();
+    // _actionMapEnum = actionMap;
+    public static void Bind(InputAction action)
     {
         GameplayActionMap.Disable();
         DialogActionMap.Disable();
-     var rebind = new InputActionRebindingExtensions.RebindingOperation()
-         .WithAction(Action)
-         .WithBindingGroup(Type)//"Gamepad"
-         .WithCancelingThrough("<Keyboard>/escape");
-     rebind.Start();
-     // inputAction.ApplyBindingOverride(bindingIndex, previousBinding);
-     GameplayActionMap.Enable();
-     DialogActionMap.Enable();
+        var rebind = new InputActionRebindingExtensions.RebindingOperation()
+            .WithAction(action)
+            .WithBindingGroup(_type) //"Gamepad"
+            .WithCancelingThrough("<Keyboard>/escape");
+        rebind.Start();
+        // inputAction.ApplyBindingOverride(bindingIndex, previousBinding);
+        GameplayActionMap.Enable();
+        DialogActionMap.Enable();
     }
+
 
     private static string ButtonName(string name)
     {
-        return string.Join("_", "T", name,"Key_Dark");
+        return string.Join("_", "T", name, "Key_Dark");
     }
+
     public static Sprite ShowHelper(string action)
     {
         //Debug.Log(string.Join("/", IconsPath, Type ,ButtonName(GameplayActionMap.FindAction(action).GetBindingDisplayString())));
-        return Resources.Load<Sprite>(string.Join("/", IconsPath, Type, ButtonName(GameplayActionMap.FindAction(action).GetBindingDisplayString())));
+        return Resources.Load<Sprite>(string.Join("/", IconsPath, _type,
+            ButtonName(GameplayActionMap.FindAction(action).GetBindingDisplayString())));
     }
+
     public static Vector2 MoveInput => _moveInput;
     public static Vector2 LookInput => _lookInput;
     public static bool JumpInput => _jumpInput;
@@ -209,7 +194,7 @@ public static class InputSys
     public static bool HistoryBtn => _historyBtn;
     public static bool AttackBtn => _attackBtn;
     public static bool InteractBtn => _interactBtn;
-    public static bool MenuBtn => _MenuBtn;
+    public static bool MenuBtn => _menuBtn;
     public static ActionMaps CurrentActionMap => _actionMapEnum;
     public static InputAction NavigateUI => _navigateUI;
 }
@@ -222,7 +207,7 @@ public class InputSys: MonoBehaviour
     /*[SerializeField]
     private InputActionAsset _altInput;#1#
     private ActionMaps _actionMap;
-    
+
     private Vector2 _moveInput;
     private Vector2 _lookInput;
     private bool _jumpInput;
@@ -244,14 +229,14 @@ public class InputSys: MonoBehaviour
     {
         _input = GetComponent<PlayerInput>();
         _actionMap = ActionMaps.GamePlay;
-        
+
         _navigateUI = _input.actions["Navigate"];
         _input.actions["Jump"].performed += OnJump;
     }
 
     private void Update()
     {
-        
+
         _moveInput = _input.actions["Move"].ReadValue<Vector2>();
         _lookInput = _input.actions["Rotate"].ReadValue<Vector2>() * cursor_sensitivity;
         _nextBtn = _input.actions["NextMessage"].triggered;
@@ -280,6 +265,6 @@ public class InputSys: MonoBehaviour
         //
         // rebind.Start();
     //}
-    
+
     public ActionMaps CurrentActionMap => _actionMap;
 }*/

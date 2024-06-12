@@ -1,14 +1,21 @@
 using System;
+using Entities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace UI
 {
     public class MainMenu : GameMenu
     {
+        [SerializeField]
+        private PlayerInput _input;
+        
         private void Awake()
         {
             ShoudOpen = true;
+            //_input = _eventSystem.gameObject.GetComponent<PlayerInput>();
+            InputSys.RegisterUIHandler(_input);
         }
 
         [SerializeField] private GameObject secretChoiseLevelPanel;

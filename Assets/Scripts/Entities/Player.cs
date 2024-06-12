@@ -31,7 +31,7 @@ namespace Entities
 
         //private IControllable _controllable;
         //private InputSys _inputSys;
-        //PlayerInput _input;
+        PlayerInput _input;
 
         private Vector3 moveDirection = Vector3.zero;
 
@@ -52,7 +52,10 @@ namespace Entities
         {
             _camera = Camera.main;
             health = MaxHealth;
-
+            
+            _input = GetComponent<PlayerInput>();
+            InputSys.RegisterPlayerHandler(_input);
+            
             _voice = GetComponent<AudioSource>();
             
             controller = GetComponent<CharacterController>();
@@ -67,6 +70,7 @@ namespace Entities
 
         void Update()
         {
+            InputSys.Update();
             if (InputSys.MenuBtn)
             {
                 Menu.ShoudOpen = !Menu.ShoudOpen;
@@ -141,7 +145,7 @@ namespace Entities
         private void Move()
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Vector2 lookDelta = InputSys.LookInput * (rotateSpeed * InputSys.cursor_sensitivity);
+            Vector2 lookDelta = InputSys.LookInput * (rotateSpeed); //* InputSys.CursorSensitivity
             /*if (playerModel)
         {
             playerModel.Rotate(0, _inputSys.lookInput.x * rotateSpeed, 0);

@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class OptionListManager : MonoBehaviour
 {
     public Button[] menuButtons;
+    // public GameObject[] menuPanels;
 
     void Start()
     {
@@ -26,14 +27,22 @@ public class OptionListManager : MonoBehaviour
     
     void OnNavigate(InputAction.CallbackContext context)
     {
-        // Получаем текущий выбранный объект
         GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
-
-        // Проверяем, является ли выбранный объект одной из кнопок в массиве menuButtons
+        
         if (menuButtons.Any(button => button.gameObject == selectedObject))
         {
-            // Если да, вызываем событие onClick
             selectedObject.GetComponent<Button>().onClick.Invoke();
         }
     }
+
+    /*
+    public void OptionClicked(int option)
+    {
+        for (int i = 0; i < menuPanels.Length; i++)
+        {
+            var obj = menuPanels[i]; 
+            obj.SetActive(i == option);
+        }
+    }*/
+    
 }
