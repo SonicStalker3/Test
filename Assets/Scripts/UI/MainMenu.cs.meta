@@ -3,7 +3,15 @@ guid: aeba9912aad6d7948952c77ed3785f2d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - OptionsObj: {instanceID: 0}
+  - MenuObj: {instanceID: 0}
+  - MenuSelected: {instanceID: 0}
+  - OptionsSelected: {instanceID: 0}
+  - CloseOptionBtn: {instanceID: 0}
+  - mixer: {fileID: 24100000, guid: 8aaedbe0f7f285243817a7b33e49aaea, type: 2}
+  - _input: {instanceID: 0}
+  - secretChoiseLevelPanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

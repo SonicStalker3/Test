@@ -312,7 +312,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187055480}
-  - component: {fileID: 187055481}
   - component: {fileID: 187055482}
   m_Layer: 3
   m_Name: Level
@@ -340,19 +339,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187055481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187055479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc7e2ec9afef894693be8c9affac410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: afec768d7b86cdd468f83eb7f0c93a79, type: 3}
 --- !u!82 &187055482
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11764,24 +11750,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6205624193547709119, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205624193547709119, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205624193547709119, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 135.41
+      value: 188.0607
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205624193547709119, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 94.02966
       objectReference: {fileID: 0}
     - target: {fileID: 6205624193854677714, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
       propertyPath: m_Name
       value: DialogUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205624193854677714, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6205624193854677718, guid: 4cd6df86d6977224ea1e2a7c5700ba82, type: 3}
       propertyPath: m_Pivot.x

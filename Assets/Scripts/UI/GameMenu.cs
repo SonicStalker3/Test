@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -19,6 +20,9 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject OptionsSelected;
     public GameObject CloseOptionBtn;
+
+    public AudioMixer mixer; 
+    //public AudioMixerGroup Music; 
 
     public bool ShoudOpen = false;
     // Start is called before the first frame update
@@ -85,15 +89,15 @@ public class GameMenu : MonoBehaviour
 
     public void OnSensitivityChanged(float x)
     {
-        //InputSys.cursor_sensitivity = x;
+        InputSys.CursorSensitivity = x;
     }
     
     public void OnMusicChanged(float x)
     {
-        //InputSys.cursor_sensitivity = x;
+        mixer.SetFloat("MusicVolume", x-80);
     }
     public void OnGraphicsChanged(float x)
     {
-        InputSys.CursorSensitivity = x;
+        //InputSys.CursorSensitivity = x;
     }
 }

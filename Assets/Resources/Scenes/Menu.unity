@@ -1534,6 +1534,7 @@ MonoBehaviour:
   MenuSelected: {fileID: 187785137}
   OptionsSelected: {fileID: 220228725}
   CloseOptionBtn: {fileID: 220228725}
+  mixer: {fileID: 24100000, guid: 8aaedbe0f7f285243817a7b33e49aaea, type: 2}
   ShoudOpen: 0
   _input: {fileID: 1363498642}
   secretChoiseLevelPanel: {fileID: 9140129}
@@ -2086,6 +2087,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1278937793}
     m_Modifications:
     - target: {fileID: 272397011425213082, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 272397011425213082, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 272397011425213082, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_MinValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 272397011425213082, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
@@ -2420,6 +2433,22 @@ PrefabInstance:
     - target: {fileID: 3598489306787826782, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.23409188
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070204154130752925, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_Name
+      value: SensitySlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802835170182606625, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802835170182606625, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_MaxValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802835170182606625, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
+      propertyPath: m_MinValue
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5802835170182606625, guid: e0873b921965b3a41ad4c25f7ab1f7f0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

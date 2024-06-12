@@ -1323,6 +1323,9 @@ MonoBehaviour:
   MenuSelected: {fileID: 8944848416744169890}
   OptionsSelected: {fileID: 5470334245993762247}
   CloseOptionBtn: {fileID: 5470334245993762247}
+  mixer: {fileID: 24100000, guid: 8aaedbe0f7f285243817a7b33e49aaea, type: 2}
+  Music: {fileID: -8820850981068688431, guid: 8aaedbe0f7f285243817a7b33e49aaea, type: 2}
+  ShoudOpen: 0
 --- !u!1001 &8944848416889027543
 PrefabInstance:
   m_ObjectHideFlags: 0
